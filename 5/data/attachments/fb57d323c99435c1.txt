@@ -1,0 +1,269 @@
+INFO     root:test_arceos.py:58 kernel_type=monokernel
+INFO     root:test_arceos.py:59 test_cmd=cd /home/runner/work/Starry/Starry && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin && ./build_img.sh && make A=apps/oscomp ARCH=x86_64 TC=libc-static-6 LOG=debug run
+INFO     root:test_arceos.py:61 res=30+0 records in
+30+0 records out
+125829120 bytes (126 MB, 120 MiB) copied, 0.121247 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+Copying x86_64 fat32 testsuits-x86_64-linux-musl/* to disk
+    [92;1mBuilding[0m App: oscomp, Arch: x86_64, Platform: x86_64-qemu-q35, App type: rust
+[37mcargo build[0m [90m--target x86_64-unknown-none --target-dir /home/runner/work/Starry/Starry/target --release  --manifest-path apps/oscomp/Cargo.toml --features "syscall_entry/log-level-debug syscall_entry/bus-pci syscall_entry/fp_simd syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net syscall_entry/fatfs"[0m
+   Compiling axdriver v0.1.0 (/home/runner/work/Starry/Starry/modules/axdriver)
+   Compiling axfs v0.1.0 (/home/runner/work/Starry/Starry/modules/axfs)
+   Compiling axnet v0.1.0 (/home/runner/work/Starry/Starry/modules/axnet)
+   Compiling axmem v0.1.0 (/home/runner/work/Starry/Starry/modules/axmem)
+   Compiling axprocess v0.1.0 (/home/runner/work/Starry/Starry/modules/axprocess)
+   Compiling syscall_utils v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_utils)
+   Compiling axruntime v0.1.0 (/home/runner/work/Starry/Starry/modules/axruntime)
+   Compiling axfeat v0.1.0 (/home/runner/work/Starry/Starry/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/Starry/Starry/api/arceos_api)
+   Compiling syscall_fs v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_fs)
+   Compiling syscall_task v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_task)
+   Compiling syscall_net v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_net)
+   Compiling syscall_mem v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_mem)
+   Compiling syscall_entry v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_entry)
+   Compiling oscomp v0.1.0 (/home/runner/work/Starry/Starry/apps/oscomp)
+    Finished release [optimized] target(s) in 12.08s
+[37mrust-objcopy --binary-architecture=x86_64[0m [90mapps/oscomp/oscomp_x86_64-qemu-q35.elf --strip-all -O binary apps/oscomp/oscomp_x86_64-qemu-q35.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-x86_64[0m [90m-m 2G -smp 1 -machine q35 -kernel apps/oscomp/oscomp_x86_64-qemu-q35.elf -device virtio-blk-pci,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+c[?7l[2J[0mSeaBIOS (version rel-1.16.0-0-gd239552ce722-prebuilt.qemu.org)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+7FF90E40+7FEF0E40 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from ROM..
+Initialize IDT & GDT...
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = x86_64
+platform = x86_64-qemu-q35
+target = x86_64-unknown-none
+smp = 1
+build_mode = release
+log_level = debug
+
+[37m[  0.001275 0 axruntime:130] [32mLogging is enabled.[m
+[m[37m[  0.001948 0 axruntime:131] [32mPrimary CPU 0 started, dtb = 0x0.[m
+[m[37m[  0.002189 0 axruntime:133] [32mFound physcial memory regions:[m
+[m[37m[  0.002436 0 axruntime:135] [32m  [PA:0x200000, PA:0x2d8000) .text (READ | EXECUTE | RESERVED)[m
+[m[37m[  0.002810 0 axruntime:135] [32m  [PA:0x2d8000, PA:0x2ee000) .rodata (READ | RESERVED)[m
+[m[37m[  0.003031 0 axruntime:135] [32m  [PA:0x2ee000, PA:0x7b02000) .data .tdata .tbss .percpu (READ | WRITE | RESERVED)[m
+[m[37m[  0.003276 0 axruntime:135] [32m  [PA:0x7b02000, PA:0x7b42000) boot stack (READ | WRITE | RESERVED)[m
+[m[37m[  0.003486 0 axruntime:135] [32m  [PA:0x7b42000, PA:0x7b68000) .bss (READ | WRITE | RESERVED)[m
+[m[37m[  0.003710 0 axruntime:135] [32m  [PA:0x1000, PA:0x9f000) low memory (READ | WRITE | RESERVED)[m
+[m[37m[  0.003945 0 axruntime:135] [32m  [PA:0x7b68000, PA:0x80000000) free memory (READ | WRITE | FREE)[m
+[m[37m[  0.004191 0 axruntime:135] [32m  [PA:0xb0000000, PA:0xc0000000) mmio (READ | WRITE | DEVICE | RESERVED)[m
+[m[37m[  0.004410 0 axruntime:135] [32m  [PA:0xfe000000, PA:0xfec00000) mmio (READ | WRITE | DEVICE | RESERVED)[m
+[m[37m[  0.004620 0 axruntime:135] [32m  [PA:0xfec00000, PA:0xfec01000) mmio (READ | WRITE | DEVICE | RESERVED)[m
+[m[37m[  0.004835 0 axruntime:135] [32m  [PA:0xfed00000, PA:0xfed01000) mmio (READ | WRITE | DEVICE | RESERVED)[m
+[m[37m[  0.005049 0 axruntime:135] [32m  [PA:0xfee00000, PA:0xfee01000) mmio (READ | WRITE | DEVICE | RESERVED)[m
+[m[37m[  0.005292 0 axruntime:217] [32mInitialize global memory allocator...[m
+[m[37m[  0.005486 0 axruntime:218] [32m  use TLSF allocator.[m
+[m[37m[  0.005836 0 axruntime:230] [32malloc region size: 78498000[m
+[m[37m[  0.006065 0 axalloc:212] [36minitialize global allocator at: [0xffffff8007b68000, 0xffffff8080000000)[m
+[m[37m[  0.007058 0 axruntime:149] [32mInitialize kernel page table...[m
+[m[37m[  0.009257 0 axruntime:153] [32mInitialize platform devices...[m
+[m[37m[  0.009448 0 axhal::platform::x86_pc::apic:87] [32mInitialize Local APIC...[m
+[m[37m[  0.009671 0 axhal::platform::x86_pc::apic:105] [32mUsing xAPIC.[m
+[m[37m[  0.010030 0 axhal::platform::x86_pc::apic:116] [32mInitialize IO APIC...[m
+[m[37m[  0.010381 0 axtask::api:68] [32mInitialize scheduling...[m
+[m[37m[  0.010745 0 axtask::task:498] [36mnew task: Task(2, UnsafeCell { .. })[m
+[m[37m[  0.011154 0 axtask::task:498] [36mnew task: Task(4, UnsafeCell { .. })[m
+[m[37m[  0.011413 0 axalloc:118] [36mexpand heap memory: [0xffffff8007bbc000, 0xffffff8007bfc000)[m
+[m[37m[  0.011663 0 axalloc:118] [36mexpand heap memory: [0xffffff8007bfc000, 0xffffff8007c7c000)[m
+[m[37m[  0.012015 0 axtask::api:74] [32m  use FIFO scheduler.[m
+[m[37m[  0.012297 0 axdriver:152] [32mInitialize device drivers...[m
+[m[37m[  0.012444 0 axdriver:153] [32m  device model: static[m
+[m[37m[  0.013484 0 axalloc:118] [36mexpand heap memory: [0xffffff8007c7c000, 0xffffff800fc7c000)[m
+[m[37m[  0.015590 0 axalloc:118] [36mexpand heap memory: [0xffffff800fc7c000, 0xffffff801fc7c000)[m
+[m[37m[  0.061491 0 axalloc:118] [36mexpand heap memory: [0xffffff801fc7c000, 0xffffff803fc7c000)[m
+[m[37m[  0.118244 0 axdriver:124] [32mregistered a new Block device: "ramdisk"[m
+[m[37m[  0.118711 0 axdriver::bus::pci:97] [36mPCI 00:00.0: 8086:29c0 (class 06.00, rev 00) Standard[m
+[m[37m[  0.119248 0 axdriver::bus::pci:97] [36mPCI 00:01.0: 1234:1111 (class 03.00, rev 02) Standard[m
+[m[37m[  0.119813 0 axdriver::bus::pci:54] [36m  BAR 0: MEM [0xfd000000, 0xfe000000) pref[m
+[m[37m[  0.120244 0 axdriver::bus::pci:54] [36m  BAR 2: MEM [0xfebd0000, 0xfebd1000)[m
+[m[37m[  0.120466 0 axdriver::bus::pci:97] [36mPCI 00:02.0: 1af4:1001 (class 01.00, rev 00) Standard[m
+[m[37m[  0.120933 0 axdriver::bus::pci:44] [36m  BAR 0: IO  [0xc000, 0xc080)[m
+[m[37m[  0.121510 0 axdriver::bus::pci:54] [36m  BAR 1: MEM [0xfebd1000, 0xfebd2000)[m
+[m[37m[  0.122773 0 axdriver::bus::pci:54] [36m  BAR 4: MEM [0xfe000000, 0xfe004000) 64bit pref[m
+[m[37m[  0.122954 0 axdriver::bus::pci:97] [36mPCI 00:03.0: 1af4:1000 (class 02.00, rev 00) Standard[m
+[m[37m[  0.123669 0 axdriver::bus::pci:44] [36m  BAR 0: IO  [0xc0c0, 0xc0e0)[m
+[m[37m[  0.124339 0 axdriver::bus::pci:54] [36m  BAR 1: MEM [0xfebd2000, 0xfebd3000)[m
+[m[37m[  0.125570 0 axdriver::bus::pci:54] [36m  BAR 4: MEM [0xfe004000, 0xfe008000) 64bit pref[m
+[m[37m[  0.127495 0 virtio_drivers::transport:78] [36mDevice features: Features(CTRL_GUEST_OFFLOADS | MAC | MRG_RXBUF | STATUS | CTRL_VQ | CTRL_RX | CTRL_VLAN | CTRL_RX_EXTRA | GUEST_ANNOUNCE | CTL_MAC_ADDR | RING_INDIRECT_DESC | RING_EVENT_IDX | VERSION_1)[m
+[m[37m[  0.128154 0 virtio_drivers::device::net::dev_raw:30] [32mnegotiated_features Features(MAC | STATUS | RING_EVENT_IDX)[m
+[m[37m[  0.128400 0 virtio_drivers::device::net::dev_raw:37] [36mGot MAC=[52, 54, 00, 12, 34, 56], status=Status(LINK_UP)[m
+[m[37m[  0.129686 0 axdriver::bus::pci:104] [32mregistered a new Net device at 00:03.0: "virtio-net"[m
+[m[37m[  0.129954 0 axdriver::bus::pci:97] [36mPCI 00:1f.0: 8086:2918 (class 06.01, rev 02) Standard[m
+[m[37m[  0.130224 0 axdriver::bus::pci:97] [36mPCI 00:1f.2: 8086:2922 (class 01.06, rev 02) Standard[m
+[m[37m[  0.130680 0 axdriver::bus::pci:44] [36m  BAR 4: IO  [0xc0e0, 0xc100)[m
+[m[37m[  0.131118 0 axdriver::bus::pci:54] [36m  BAR 5: MEM [0xfebd3000, 0xfebd4000)[m
+[m[37m[  0.131270 0 axdriver::bus::pci:97] [36mPCI 00:1f.3: 8086:2930 (class 0c.05, rev 02) Standard[m
+[m[37m[  0.131667 0 axdriver::bus::pci:44] [36m  BAR 4: IO  [0x700, 0x740)[m
+[m[37m[  0.148709 0 axdriver:171] [36mnumber of NICs: 1[m
+[m[37m[  0.148869 0 axdriver:174] [36m  NIC 0: "virtio-net"[m
+[m[37m[  0.149010 0 axdriver:179] [36mnumber of block devices: 1[m
+[m[37m[  0.149147 0 axdriver:182] [36m  block device 0: "ramdisk"[m
+[m[37m[  0.149308 0 axfs:44] [32mInitialize filesystems...[m
+[m[37m[  0.149441 0 axfs:47] [32m  use block device 0: "ramdisk"[m
+[m[37m[  0.150905 0 axfs::fs::fatfs:176] [36mcreate Dir at fatfs: /dev[m
+[m[37m[  0.156307 0 axfs::fs::fatfs:156] [36mlookup at fatfs: /dev[m
+[m[37m[  0.157709 0 fatfs::dir:140] [31mIs a directory[m
+[m[37m[  0.159524 0 axfs::fs::fatfs:176] [36mcreate Dir at fatfs: /tmp[m
+[m[37m[  0.161958 0 axfs::fs::fatfs:156] [36mlookup at fatfs: /tmp[m
+[m[37m[  0.163230 0 fatfs::dir:140] [31mIs a directory[m
+[m[37m[  0.164611 0 axfs::fs::fatfs:176] [36mcreate Dir at fatfs: /var[m
+[m[37m[  0.167078 0 axfs::fs::fatfs:156] [36mlookup at fatfs: /var[m
+[m[37m[  0.168368 0 fatfs::dir:140] [31mIs a directory[m
+[m[37m[  0.169727 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: sys[m
+[m[37m[  0.170052 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: sys/net[m
+[m[37m[  0.170287 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: net[m
+[m[37m[  0.170425 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: sys/net/core[m
+[m[37m[  0.170547 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: net/core[m
+[m[37m[  0.170663 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: core[m
+[m[37m[  0.170787 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: sys/net/core/somaxconn[m
+[m[37m[  0.170946 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: net/core/somaxconn[m
+[m[37m[  0.171098 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: core/somaxconn[m
+[m[37m[  0.171240 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: somaxconn[m
+[m[37m[  0.171592 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: sys/vm[m
+[m[37m[  0.171708 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: vm[m
+[m[37m[  0.171904 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: sys/vm/overcommit_memory[m
+[m[37m[  0.172047 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: vm/overcommit_memory[m
+[m[37m[  0.172191 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: overcommit_memory[m
+[m[37m[  0.172389 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: self[m
+[m[37m[  0.172562 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: self/stat[m
+[m[37m[  0.172686 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: stat[m
+[m[37m[  0.172808 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: self/exe[m
+[m[37m[  0.172928 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: exe[m
+[m[37m[  0.173049 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: meminfo[m
+[m[37m[  0.173177 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: mounts[m
+[m[37m[  0.173304 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: interrupts[m
+[m[37m[  0.173487 0 axfs::fs::fatfs:176] [36mcreate Dir at fatfs: /proc[m
+[m[37m[  0.175946 0 axfs::fs::fatfs:156] [36mlookup at fatfs: /proc[m
+[m[37m[  0.177229 0 fatfs::dir:140] [31mIs a directory[m
+[m[37m[  0.178573 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: kernel[m
+[m[37m[  0.178705 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: kernel/mm[m
+[m[37m[  0.178828 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: mm[m
+[m[37m[  0.178951 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: kernel/mm/transparent_hugepage[m
+[m[37m[  0.179096 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: mm/transparent_hugepage[m
+[m[37m[  0.179232 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: transparent_hugepage[m
+[m[37m[  0.179375 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: kernel/mm/transparent_hugepage/enabled[m
+[m[37m[  0.179531 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: mm/transparent_hugepage/enabled[m
+[m[37m[  0.179677 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: transparent_hugepage/enabled[m
+[m[37m[  0.179829 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: enabled[m
+[m[37m[  0.179984 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: devices[m
+[m[37m[  0.180114 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: devices/system[m
+[m[37m[  0.180240 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: system[m
+[m[37m[  0.180364 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: devices/system/clocksource[m
+[m[37m[  0.180505 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: system/clocksource[m
+[m[37m[  0.180632 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: clocksource[m
+[m[37m[  0.180759 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: devices/system/clocksource/clocksource0[m
+[m[37m[  0.180918 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: system/clocksource/clocksource0[m
+[m[37m[  0.181064 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: clocksource/clocksource0[m
+[m[37m[  0.181201 0 axfs_ramfs::dir:128] [36mcreate Dir at ramfs: clocksource0[m
+[m[37m[  0.181336 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: devices/system/clocksource/clocksource0/current_clocksource[m
+[m[37m[  0.181522 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: system/clocksource/clocksource0/current_clocksource[m
+[m[37m[  0.181693 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: clocksource/clocksource0/current_clocksource[m
+[m[37m[  0.181856 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: clocksource0/current_clocksource[m
+[m[37m[  0.182004 0 axfs_ramfs::dir:128] [36mcreate File at ramfs: current_clocksource[m
+[m[37m[  0.182191 0 axfs::fs::fatfs:176] [36mcreate Dir at fatfs: /sys[m
+[m[37m[  0.184680 0 axfs::fs::fatfs:156] [36mlookup at fatfs: /sys[m
+[m[37m[  0.186013 0 fatfs::dir:140] [31mIs a directory[m
+[m[37m[  0.187491 0 axnet:46] [32mInitialize network subsystem...[m
+[m[37m[  0.187645 0 axnet:49] [32m  use NIC 0: "virtio-net"[m
+[m[37m[  0.188713 0 axruntime:185] [32mInitialize interrupt handlers...[m
+[m[37m[  0.189165 0 axruntime:195] [32mPrimary CPU 0 init OK.[m
+[m[37m[  0.190960 0:3 axprocess::link:236] [32mcreate_link: /lib/ld-musl-x86_64-sf.so.1 -> /libc.so[m
+[m[37m[  0.191274 0:3 axfs::root:81] [36mlookup at root: /libc.so[m
+[m[37m[  0.191647 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: libc.so[m
+[m[37m[  0.194418 0:3 axprocess::link:236] [32mcreate_link: /lib/ld-musl-x86_64.so.1 -> /libc.so[m
+[m[37m[  0.194607 0:3 axfs::root:81] [36mlookup at root: /libc.so[m
+[m[37m[  0.194720 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: libc.so[m
+[m[37m[  0.196052 0:3 axprocess::link:236] [32mcreate_link: /lib/tls_get_new-dtv_dso.so -> /tls_get_new-dtv_dso.so[m
+[m[37m[  0.196228 0:3 axfs::root:81] [36mlookup at root: /tls_get_new-dtv_dso.so[m
+[m[37m[  0.196366 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: tls_get_new-dtv_dso.so[m
+[m[37m[  0.197740 0:3 axprocess::link:236] [32mcreate_link: /sbin/busybox -> /busybox[m
+[m[37m[  0.197878 0:3 axfs::root:81] [36mlookup at root: /busybox[m
+[m[37m[  0.197990 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: busybox[m
+[m[37m[  0.198264 0:3 axprocess::link:236] [32mcreate_link: /sbin/ls -> /busybox[m
+[m[37m[  0.198400 0:3 axfs::root:81] [36mlookup at root: /busybox[m
+[m[37m[  0.198513 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: busybox[m
+[m[37m[  0.198742 0:3 axprocess::link:236] [32mcreate_link: /ls -> /busybox[m
+[m[37m[  0.198863 0:3 axfs::root:81] [36mlookup at root: /busybox[m
+[m[37m[  0.198971 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: busybox[m
+[m[37m[  0.199222 0:3 axprocess::link:236] [32mcreate_link: /sh -> /busybox[m
+[m[37m[  0.199342 0:3 axfs::root:81] [36mlookup at root: /busybox[m
+[m[37m[  0.199464 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: busybox[m
+[m[37m[  0.199688 0:3 axprocess::link:236] [32mcreate_link: /bin/lmbench_all -> /lmbench_all[m
+[m[37m[  0.199833 0:3 axfs::root:81] [36mlookup at root: /lmbench_all[m
+[m[37m[  0.199950 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: lmbench_all[m
+[m[37m[  0.200685 0:3 axprocess::link:236] [32mcreate_link: /bin/iozone -> /iozone[m
+[m[37m[  0.200814 0:3 axfs::root:81] [36mlookup at root: /iozone[m
+[m[37m[  0.200924 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: iozone[m
+[m[37m[  0.201520 0:3 axfs::fops:117] [36mopen file: /lat_sig READ | WRITE | CREATE[m
+[m[37m[  0.201799 0:3 axfs::root:81] [36mlookup at root: /lat_sig[m
+[m[37m[  0.201924 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: lat_sig[m
+[m[37m[  0.204605 0:3 axfs::root:81] [36mlookup at root: /lat_sig[m
+[m[37m[  0.204871 0:3 axfs::fs::fatfs:176] [36mcreate File at fatfs: lat_sig[m
+[m[37m[  0.208473 0:3 axfs::root:81] [36mlookup at root: /lat_sig[m
+[m[37m[  0.208593 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: lat_sig[m
+[m[37m[  0.210186 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/ld-musl-riscv64.so.1 -> /lib/libc.so[m
+[m[37m[  0.210459 0:3 axfs::root:81] [36mlookup at root: /lib/libc.so[m
+[m[37m[  0.210649 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: lib/libc.so[m
+[m[37m[  0.212395 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.212647 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/libatomic.so -> /riscv64-linux-musl-native/lib/libatomic.so.1.2.0[m
+[m[37m[  0.212875 0:3 axfs::root:81] [36mlookup at root: /riscv64-linux-musl-native/lib/libatomic.so.1.2.0[m
+[m[37m[  0.213044 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: riscv64-linux-musl-native/lib/libatomic.so.1.2.0[m
+[m[37m[  0.215658 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.215890 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/libatomic.so.1 -> /riscv64-linux-musl-native/lib/libatomic.so.1.2.0[m
+[m[37m[  0.216122 0:3 axfs::root:81] [36mlookup at root: /riscv64-linux-musl-native/lib/libatomic.so.1.2.0[m
+[m[37m[  0.216282 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: riscv64-linux-musl-native/lib/libatomic.so.1.2.0[m
+[m[37m[  0.218844 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.219091 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/libgfortran.so -> /riscv64-linux-musl-native/lib/libgfortran.so.5.0.0[m
+[m[37m[  0.219323 0:3 axfs::root:81] [36mlookup at root: /riscv64-linux-musl-native/lib/libgfortran.so.5.0.0[m
+[m[37m[  0.219487 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: riscv64-linux-musl-native/lib/libgfortran.so.5.0.0[m
+[m[37m[  0.222070 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.222296 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/libgfortran.so.5 -> /riscv64-linux-musl-native/lib/libgfortran.so.5.0.0[m
+[m[37m[  0.222535 0:3 axfs::root:81] [36mlookup at root: /riscv64-linux-musl-native/lib/libgfortran.so.5.0.0[m
+[m[37m[  0.222698 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: riscv64-linux-musl-native/lib/libgfortran.so.5.0.0[m
+[m[37m[  0.225264 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.225489 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/libgomp.so -> /riscv64-linux-musl-native/lib/libgomp.so.1.0.0[m
+[m[37m[  0.225715 0:3 axfs::root:81] [36mlookup at root: /riscv64-linux-musl-native/lib/libgomp.so.1.0.0[m
+[m[37m[  0.225876 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: riscv64-linux-musl-native/lib/libgomp.so.1.0.0[m
+[m[37m[  0.228416 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.228636 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/libgomp.so.1 -> /riscv64-linux-musl-native/lib/libgomp.so.1.0.0[m
+[m[37m[  0.228869 0:3 axfs::root:81] [36mlookup at root: /riscv64-linux-musl-native/lib/libgomp.so.1.0.0[m
+[m[37m[  0.229027 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: riscv64-linux-musl-native/lib/libgomp.so.1.0.0[m
+[m[37m[  0.231552 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.231810 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/libssp.so -> /riscv64-linux-musl-native/lib/libssp.so.0.0.0[m
+[m[37m[  0.232032 0:3 axfs::root:81] [36mlookup at root: /riscv64-linux-musl-native/lib/libssp.so.0.0.0[m
+[m[37m[  0.232195 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: riscv64-linux-musl-native/lib/libssp.so.0.0.0[m
+[m[37m[  0.234769 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.234995 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/libssp.so.0 -> /riscv64-linux-musl-native/lib/libssp.so.0.0.0[m
+[m[37m[  0.235217 0:3 axfs::root:81] [36mlookup at root: /riscv64-linux-musl-native/lib/libssp.so.0.0.0[m
+[m[37m[  0.235374 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: riscv64-linux-musl-native/lib/libssp.so.0.0.0[m
+[m[37m[  0.237911 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.238140 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/libstdc++.so -> /riscv64-linux-musl-native/lib/libstdc++.so.6.0.29[m
+[m[37m[  0.238369 0:3 axfs::root:81] [36mlookup at root: /riscv64-linux-musl-native/lib/libstdc++.so.6.0.29[m
+[m[37m[  0.238539 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: riscv64-linux-musl-native/lib/libstdc++.so.6.0.29[m
+[m[37m[  0.241094 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.241313 0:3 axprocess::link:236] [32mcreate_link: /riscv64-linux-musl-native/lib/libstdc++.so.6 -> /riscv64-linux-musl-native/lib/libstdc++.so.6.0.29[m
+[m[37m[  0.241544 0:3 axfs::root:81] [36mlookup at root: /riscv64-linux-musl-native/lib/libstdc++.so.6.0.29[m
+[m[37m[  0.241708 0:3 axfs::fs::fatfs:156] [36mlookup at fatfs: riscv64-linux-musl-native/lib/libstdc++.so.6.0.29[m
+[m[37m[  0.244295 0:3 axprocess::link:246] [36mlink dest file not exists[m
+[m[37m[  0.244645 0:3 syscall_entry::test:761] [32m --------------- all test ended, passed 0 / 0 --------------- [m
+[m[37m[  0.244863 0:3 syscall_entry::test:765] [32m --------------- failed tests: --------------- [m
+[m[37m[  0.245043 0:3 syscall_entry::test:769] [32m --------------- end --------------- [m
+[m[37m[  0.245304 0:3 axtask::run_queue:107] [36mtask exit: Task(3, UnsafeCell { .. }), exit_code=0[m
+[m[37m[  0.245583 0:3 axhal::platform::x86_pc::misc:7] [32mShutting down...[m
+[m
