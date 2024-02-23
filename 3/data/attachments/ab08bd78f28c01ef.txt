@@ -1,0 +1,28 @@
+INFO     root:test_arceos.py:58 kernel_type=monokernel
+INFO     root:test_arceos.py:59 test_cmd=cd /home/runner/work/Starry/Starry && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin && ./build_img.sh && make A=apps/oscomp ARCH=x86_64 TC=libc-dynamic-1 LOG=debug run
+INFO     root:test_arceos.py:61 res=30+0 records in
+30+0 records out
+125829120 bytes (126 MB, 120 MiB) copied, 0.120843 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+Copying x86_64 fat32 testsuits-x86_64-linux-musl/* to disk
+    [92;1mBuilding[0m App: oscomp, Arch: x86_64, Platform: x86_64-qemu-q35, App type: rust
+[37mcargo build[0m [90m--target x86_64-unknown-none --target-dir /home/runner/work/Starry/Starry/target --release  --manifest-path apps/oscomp/Cargo.toml --features "syscall_entry/log-level-debug syscall_entry/bus-pci syscall_entry/fp_simd syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net syscall_entry/fatfs"[0m
+   Compiling axdriver v0.1.0 (/home/runner/work/Starry/Starry/modules/axdriver)
+   Compiling axfs v0.1.0 (/home/runner/work/Starry/Starry/modules/axfs)
+   Compiling axnet v0.1.0 (/home/runner/work/Starry/Starry/modules/axnet)
+   Compiling axmem v0.1.0 (/home/runner/work/Starry/Starry/modules/axmem)
+   Compiling syscall_utils v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_utils)
+   Compiling axprocess v0.1.0 (/home/runner/work/Starry/Starry/modules/axprocess)
+   Compiling axruntime v0.1.0 (/home/runner/work/Starry/Starry/modules/axruntime)
+   Compiling syscall_fs v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_fs)
+   Compiling axfeat v0.1.0 (/home/runner/work/Starry/Starry/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/Starry/Starry/api/arceos_api)
+   Compiling syscall_task v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_task)
+   Compiling syscall_mem v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_mem)
+   Compiling syscall_net v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_net)
+   Compiling syscall_entry v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_entry)
+   Compiling oscomp v0.1.0 (/home/runner/work/Starry/Starry/apps/oscomp)
+    Finished release [optimized] target(s) in 11.76s
+[37mrust-objcopy --binary-architecture=x86_64[0m [90mapps/oscomp/oscomp_x86_64-qemu-q35.elf --strip-all -O binary apps/oscomp/oscomp_x86_64-qemu-q35.bin[0m
+make: rust-objcopy: No such file or directory
+make: *** [scripts/make/build.mk:52: apps/oscomp/oscomp_x86_64-qemu-q35.bin] Error 127
