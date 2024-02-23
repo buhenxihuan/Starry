@@ -34,7 +34,12 @@ jobs:
         with:
           profile: minimal                           # 使用 minimal 配置文件，这通常是一个轻量级的配置文件，可能只包含项目的基本信息。
           toolchain: ${{ env.rust-toolchain }}       # 表示使用环境变量 rust_toolchain 中指定的 Rust 工具链版本。 
-          components: rust-src, llvm-tools-preview, rustfmt, clippy, cargo-binutils
+          components: rust-src, llvm-tools-preview, rustfmt, clippy
+
+      - name: install cargo-binutils
+        run: cargo install cargo-binutils --force
+
+
 
       - name: Cache QEMU
         id: cache-qemu
