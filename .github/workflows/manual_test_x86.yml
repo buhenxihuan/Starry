@@ -1,4 +1,4 @@
-name: manual Test CI
+name: manual Test CI_x86
 
 on: 
   [push,workflow_dispatch]
@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         # arch: [x86_64, riscv64, aarch64]
-        arch: [riscv64]
+        arch: [x86_64]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -78,9 +78,9 @@ jobs:
           sudo tar zxvf allure-commandline-2.24.1.tgz -C allure-com
           ls -lh
           sudo ln -s /home/runner/work/Starry/Starry/allure-com/package/bin/allure /usr/bin/allure
-          wget https://musl.cc/riscv64-linux-musl-cross.tgz
-          sudo tar xzvf riscv64-linux-musl-cross.tgz
-          sudo echo 'export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin' >> ~/.bashrc
+        #  wget https://musl.cc/riscv64-linux-musl-cross.tgz
+        #  sudo tar xzvf riscv64-linux-musl-cross.tgz
+        #  sudo echo 'export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin' >> ~/.bashrc
       
       - name: install pytest and test
         run: |

@@ -54,7 +54,7 @@ def step_01_uni(cmdRun, cmdApp):
 
 @allure.step("测试步骤一：执行测试")
 def step_01_mono(cmdRun, cmdTc):
-    _cmd = 'cd /home/runner/work/Starry/Starry && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin && ./build_img.sh && make A=apps/oscomp ARCH=x86_64 TC=%s run' %cmdTc
+    _cmd = 'cd /home/runner/work/Starry/Starry && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin && ./build_img.sh && make A=apps/oscomp ARCH=x86_64 TC=%s LOG=debug run' %cmdTc
     logging.info("kernel_type=monokernel")
     logging.info("test_cmd=" + _cmd)
     _, res = cmdRun.run_cmd(_cmd)
