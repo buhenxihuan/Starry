@@ -34,6 +34,7 @@ SMP ?= 1
 MODE ?= release
 LOG ?= off
 V ?=
+TC ?= libc-static
 
 # App options
 A ?= apps/oscomp
@@ -162,6 +163,10 @@ else ifeq ($(PLATFORM_NAME), aarch64-bsta1000b)
   include scripts/make/bsta1000b-fada.mk
 endif
 
+make_testcase:
+  $(shell sed 's/TESTCASE/"$(TC)"/' apps/oscomp/src/main_template.rs > apps/oscomp/src/main.rs)
+
+
 make_bin: 
   ifeq ($(STRUCT), Monolithic)
 		$(call make_bin)
@@ -172,7 +177,7 @@ build: make_bin $(OUT_DIR) $(OUT_BIN)
 disasm:
 	$(OBJDUMP) $(OUT_ELF) | less
 
-run: build justrun
+run: make_testcase build justrun
 
 justrun:
 	$(call run_qemu)

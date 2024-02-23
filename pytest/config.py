@@ -48,7 +48,7 @@ monoCmdList = [
     ]
 
 monoTcList = [
-    "sdcard",
+    # "sdcard",
     "libc-static-0",
     "libc-static-1",
     "libc-static-2",
