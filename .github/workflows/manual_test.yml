@@ -40,7 +40,7 @@ jobs:
 
       - name: Download and Compile QEMU
         if: steps.cache-qemu.outputs.cache-hit != 'true'
-        run: .github/scripts/make-qemu.sh ${{ env.qemu-version }}
+        run: sudo .github/scripts/make-qemu.sh ${{ env.qemu-version }}
 
       - name: Install QEMU
         run: |
@@ -70,7 +70,7 @@ jobs:
           sudo tar xzvf riscv64-linux-musl-cross.tgz
           sudo echo 'export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin' >> ~/.bashrc
       
-      - name: install pytest
+      - name: install pytest and test
         run: |
           chmod -R 777 pytest/
           cd pytest
