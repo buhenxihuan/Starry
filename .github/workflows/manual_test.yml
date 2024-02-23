@@ -22,6 +22,11 @@ jobs:
         with:
           ref: x86_64
           submodules: 'recursive'
+      - name: test
+        run: |
+          pwd
+          ls -l
+
 
       - uses: actions-rs/toolchain@v1
         with:
@@ -40,8 +45,8 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ninja-build
 
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      # - name: Setup tmate session
+      #   uses: mxschmitt/action-tmate@v3
 
       - name: Download and Compile QEMU
         if: steps.cache-qemu.outputs.cache-hit != 'true'
