@@ -22,12 +22,12 @@ jobs:
         with:
           ref: x86_64
           submodules: 'recursive'
-      - name: test
-        run: |
-          pwd
-          ls -al
-          cd .github/scripts/
-          ls -al
+      # - name: test
+      #   run: |
+      #     pwd
+      #     ls -al
+      #     cd .github/scripts/
+      #     ls -al
 
 
       - uses: actions-rs/toolchain@v1
@@ -52,7 +52,7 @@ jobs:
 
       - name: Download and Compile QEMU
         if: steps.cache-qemu.outputs.cache-hit != 'true'
-        run: sudo .github/scripts/make-qemu.sh ${{ env.qemu-version }}
+        run: sudo chmod +x .github/scripts/make-qemu.sh && .github/scripts/make-qemu.sh ${{ env.qemu-version }}
 
       - name: Install QEMU
         run: |
