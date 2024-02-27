@@ -47,7 +47,7 @@ jobs:
         shell: sh
         run: |
               cd pytest
-              sed -i "s/\"测试架构\": .*/\"测试架构\": \"$my_ARCH\",/" config.py
+              sed -i "s/\"测试架构\": .*/\"测试架构\": \"${{ env.ARCH }}\",/" config.py
               sed -i "s/\"提交者\": .*/\"提交者\": \"$my_GITHUB_ACTOR\",/" config.py
               sed -i "s/\"提交ID\": .*/\"提交ID\": \"$my_GITHUB_SHA\",/" config.py
               sed -i "s/\"提交时间\": .*/\"提交时间\": \"$my_COMMIT_TIME\",/" config.py
