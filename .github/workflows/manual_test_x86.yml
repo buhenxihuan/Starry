@@ -99,6 +99,7 @@ jobs:
       
       - name: install pytest and test
         run: |
+          export ARCH GITHUB_ACTOR GITHUB_SHA COMMIT_TIME GITHUB_REPOSITORY GITHUB_REF_NAME GITHUB_WORKSPACE
           chmod -R 777 pytest/
           cd pytest
           export PATH=$PATH:/home/runner/.cargo/bin/
