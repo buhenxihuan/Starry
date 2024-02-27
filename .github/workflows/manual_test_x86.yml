@@ -19,6 +19,7 @@ jobs:
         arch: [x86_64]
     env:
         ARCH: ${{matrix.arch}}
+        ARCH_TEST: ${{matrix.arch}}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -37,12 +38,11 @@ jobs:
             COMMIT_TIME=$(date -d '+8 hour')
             echo "COMMIT_TIME=$COMMIT_TIME" >> $GITHUB_ENV
             python -c 'import os;print(os.environ.get("ARCH"))'
-            sudo python env.py
             echo $GITHUB_ENV
-      - name: test env
-        run: |
-            python -c 'import os;print(os.environ.get("ARCH"))'
-            sudo python env.py
+      # - name: test env
+      #   run: |
+      #       python -c 'import os;print(os.environ.get("ARCH"))'
+      #       sudo python env.py
 
           
 
@@ -104,14 +104,22 @@ jobs:
         #  sudo tar xzvf riscv64-linux-musl-cross.tgz
         #  sudo echo 'export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin' >> ~/.bashrc
       
-      - name: install pytest and test
+      - name: install pytest
         run: |
-          export ARCH="x86_64" GITHUB_ACTOR GITHUB_SHA COMMIT_TIME GITHUB_REPOSITORY GITHUB_REF_NAME GITHUB_WORKSPACE
           chmod -R 777 pytest/
           cd pytest
           export PATH=$PATH:/home/runner/.cargo/bin/
           sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
-          sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir
+      - name: os_test
+        shell: python
+        run: |
+          import os
+          import subprocess
+          dir=os.environ["GITHUB_WORKSPACE"]
+          os.chdir(dir+'/pytest')
+          pytest_command = "sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir"
+          subprocess.run(pytest_command, shell=True)
+        # sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir
          # sudo allure generate report/result -o report/html --clean
 
 
