@@ -32,11 +32,10 @@ jobs:
       #     ls -al
 
 
-      - name: Put current date into a variable
+      - name: Add current date into a variable
         run: |
-            COMMIT_TIME=$(date)
+            COMMIT_TIME=$(date -d '+8 hour')
             echo "COMMIT_TIME=$COMMIT_TIME" >> $GITHUB_ENV
-            env
           
 
 
