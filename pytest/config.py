@@ -75,5 +75,5 @@ monoTcList = [
     "iozone",
     "lmbench",
     # "unixbench",
-    "all"
+    # "all"
 ]
