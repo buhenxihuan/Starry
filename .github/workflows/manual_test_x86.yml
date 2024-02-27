@@ -30,6 +30,10 @@ jobs:
       #     ls -al
 
 
+      - name: env_test
+        run: python -c 'import os; print(os.environ["qemu-version"])'
+
+
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal                           # 使用 minimal 配置文件，这通常是一个轻量级的配置文件，可能只包含项目的基本信息。
