@@ -1,5 +1,4 @@
 import os
-from os import environ as env
 
 file_path = os.environ.get('GITHUB_ENV', None)
 if file_path is None:
