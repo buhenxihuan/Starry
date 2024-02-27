@@ -44,6 +44,7 @@ jobs:
       #       python -c 'import os;print(os.environ.get("ARCH"))'
       #       sudo python env.py
       - name: config.py key_value set
+        shell: sh
         run: |
               cd pytest
               sed -i "s/\"测试架构\": .*/\"测试架构\": \"$my_ARCH\",/" config.py
