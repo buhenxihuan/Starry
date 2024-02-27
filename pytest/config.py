@@ -80,9 +80,9 @@ monoTcList = [
 ]
 
 
-print("----------------env test start-----------------------")
-print(os.environ["github.actor"])
-print(os.environ["qemu-version"])
-print(os.environ["env.qemu-version"])
+# print("----------------env test start-----------------------")
+# print(os.environ["github.actor"])
+# print(os.environ["qemu-version"])
+# print(os.environ["env.qemu-version"])
 
-print("----------------env test end  -----------------------")
+# print("----------------env test end  -----------------------")
