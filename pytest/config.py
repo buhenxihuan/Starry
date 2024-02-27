@@ -101,4 +101,3 @@ commitConfig = {
     "分支名": os.environ.get("GITHUB_REF_NAME"),
     "工作目录": os.environ.get("GITHUB_WORKSPACE"),
 }
-print(os.environ)

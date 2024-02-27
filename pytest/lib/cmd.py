@@ -16,6 +16,7 @@ class cmd:
 
     # 执行非交互命令
     def run_cmd(self, cmd):
+        print(os.environ)
         p = subprocess.Popen(cmd, shell=True,env=os.environ, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         stdout, stderr = p.communicate()
         result = ''
