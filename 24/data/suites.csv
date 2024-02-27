@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Feb 27 09:06:58 GMT 2024","Tue Feb 27 09:08:44 GMT 2024","106550","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","测试用例简要描述"
+"passed","Tue Feb 27 08:57:55 GMT 2024","Tue Feb 27 08:58:47 GMT 2024","51382","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","测试用例简要描述"
+"passed","Tue Feb 27 08:59:22 GMT 2024","Tue Feb 27 08:59:33 GMT 2024","11825","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","测试用例简要描述"
+"passed","Tue Feb 27 08:59:33 GMT 2024","Tue Feb 27 08:59:45 GMT 2024","11644","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","测试用例简要描述"
+"passed","Tue Feb 27 08:59:45 GMT 2024","Tue Feb 27 09:06:58 GMT 2024","432582","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","测试用例简要描述"
+"passed","Tue Feb 27 08:58:47 GMT 2024","Tue Feb 27 08:59:10 GMT 2024","23145","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","测试用例简要描述"
+"passed","Tue Feb 27 08:59:10 GMT 2024","Tue Feb 27 08:59:22 GMT 2024","11749","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","测试用例简要描述"
