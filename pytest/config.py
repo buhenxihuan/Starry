@@ -93,7 +93,7 @@ monoTcList = [
 ]
 
 commitConfig = {
-    "测试架构": "testtest",
+    "测试架构": "aaa",
     "提交者": os.environ.get("GITHUB_ACTOR"),
     "提交ID": os.environ.get("GITHUB_SHA"),
     "提交时间": os.environ.get("COMMIT_TIME"),
