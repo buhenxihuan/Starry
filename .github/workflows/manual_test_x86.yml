@@ -36,6 +36,7 @@ jobs:
         run: |
             COMMIT_TIME=$(date -d '+8 hour')
             echo "COMMIT_TIME=$COMMIT_TIME" >> $GITHUB_ENV
+            python -c 'import os;print(os.environ.get("ARCH"))'
           
 
 
