@@ -31,7 +31,9 @@ jobs:
 
 
       - name: env_test
-        run: python -c 'import os; print(os.environ["qemu-version"])'
+        run: |
+            python -c 'import os; print(os.environ["qemu-version"])'
+            env
 
 
       - uses: actions-rs/toolchain@v1
