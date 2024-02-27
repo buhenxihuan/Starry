@@ -9,13 +9,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 print(BASE_DIR)
 sys.path.append(BASE_DIR)
 
+
 class cmd:
     def __init__(self):
         self.test = 'test'
 
     # 执行非交互命令
     def run_cmd(self, cmd):
-        p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p = subprocess.Popen(cmd, shell=True,env=os.environ, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         stdout, stderr = p.communicate()
         result = ''
 
