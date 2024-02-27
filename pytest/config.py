@@ -48,9 +48,9 @@ monoCmdList = [
     "apps/oscomp"
     ]
 
-monoTcList = [
+# monoTcList = [
     # "sdcard",
-    "libc-static-0",
+    # "libc-static-0",
     # "libc-static-1",
     # "libc-static-2",
     # "libc-static-3",
@@ -77,12 +77,17 @@ monoTcList = [
     # "lmbench",
     # "unixbench",
     # "all"
+# ]
+
+monoTcList = [
+    # "busybox",
+    "libc-static",
+    "libc-dynamic",
+    "netperf",
+    "iperf",
+    "cyclictest",
+    "iozone",
+    "lmbench",
+    # "unixbench",
+    # "all"
 ]
-
-
-# print("----------------env test start-----------------------")
-# print(os.environ["github.actor"])
-# print(os.environ["qemu-version"])
-# print(os.environ["env.qemu-version"])
-
-# print("----------------env test end  -----------------------")
