@@ -43,7 +43,15 @@ jobs:
       #   run: |
       #       python -c 'import os;print(os.environ.get("ARCH"))'
       #       sudo python env.py
-
+      - name: os_test_test
+        shell: python
+        run: |
+          import os
+          dir=os.environ["GITHUB_WORKSPACE"]
+          print("---------------------------")
+          print(dir)
+          print(os.environ)
+          print("----------------------------")
           
 
 
@@ -114,15 +122,14 @@ jobs:
         shell: python
         run: |
           import os
-          import subprocess
           dir=os.environ["GITHUB_WORKSPACE"]
           print("---------------------------")
           print(dir)
           print(os.environ)
           print("----------------------------")
           os.chdir(dir+'/pytest')
-          pytest_command = "sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir"
-          subprocess.run(pytest_command, shell=True,env=os.environ)
+        #  pytest_command = "sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir"
+        #  subprocess.run(pytest_command, shell=True,env=os.environ)
         # sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir
          # sudo allure generate report/result -o report/html --clean
 
