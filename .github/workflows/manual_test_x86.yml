@@ -117,6 +117,7 @@ jobs:
           import subprocess
           dir=os.environ["GITHUB_WORKSPACE"]
           print(dir)
+          print(os.environ)
           os.chdir(dir+'/pytest')
           pytest_command = "sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir"
           subprocess.run(pytest_command, shell=True,env=os.environ)
