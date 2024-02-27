@@ -17,6 +17,8 @@ jobs:
       matrix:
         # arch: [x86_64, riscv64, aarch64]
         arch: [x86_64]
+    env:
+        ARCH: ${{matrix.arch}}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -34,6 +36,8 @@ jobs:
         run: |
             python -c 'import os; print(os.environ["qemu-version"])'
             env
+
+          
 
 
       - uses: actions-rs/toolchain@v1
