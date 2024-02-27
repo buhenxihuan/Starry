@@ -38,6 +38,7 @@ jobs:
             echo "COMMIT_TIME=$COMMIT_TIME" >> $GITHUB_ENV
             python -c 'import os;print(os.environ.get("ARCH"))'
             sudo python env.py
+            echo $GITHUB_ENV
       - name: test env
         run: |
             python -c 'import os;print(os.environ.get("ARCH"))'
