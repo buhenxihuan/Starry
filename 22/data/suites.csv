@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Feb 27 08:50:55 GMT 2024","Tue Feb 27 08:51:41 GMT 2024","45714","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","测试用例简要描述"
