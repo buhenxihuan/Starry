@@ -36,7 +36,7 @@ jobs:
       - name: Put current date into a variable
         run: |
             NOW=$(date)
-            echo "NOW=$NOW" >> $env:GITHUB_ENV
+            echo "NOW=$NOW" >> $GITHUB_ENV
             env
 
       - name: env_test
