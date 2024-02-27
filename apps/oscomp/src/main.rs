@@ -6,5 +6,6 @@ use syscall_entry::run_testcases;
 
 #[no_mangle]
 fn main() {
-    run_testcases("sdcard");
+    let tc = option_env!("AX_TC").unwrap_or("libc-static");
+    run_testcases(tc);
 }
