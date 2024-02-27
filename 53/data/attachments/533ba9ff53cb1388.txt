@@ -1,0 +1,5 @@
+INFO     root:test_arceos.py:187 kernel_type=monokernel
+INFO     root:test_arceos.py:188 test_cmd=cd $my_GITHUB_WORKSPACE && ./build_img.sh $my_ARCH && make A=apps/oscomp ARCH=$my_ARCH TC=lmbench run
+INFO     root:test_arceos.py:190 res=/bin/sh: 1: ./build_img.sh: not found
+INFO     root:test_arceos.py:192 用例结果信息=测试失败，命令执行失败
+INFO     root:test_arceos.py:165 测试后置步骤：打印日志
