@@ -180,7 +180,7 @@ def step_01_uni(cmdRun, cmdApp):
 
 @allure.step("测试步骤一：执行测试")
 def step_01_mono(cmdRun, cmdTc):
-    _cmd = 'cd %s && ./build_img.sh %s && make A=apps/oscomp ARCH=%s TC=%s run' %(commitConfig.get("工作目录"), \
+    _cmd = 'export ARCH GITHUB_ACTOR GITHUB_SHA COMMIT_TIME GITHUB_REPOSITORY GITHUB_REF_NAME GITHUB_WORKSPACE  && cd %s && ./build_img.sh %s && make A=apps/oscomp ARCH=%s TC=%s run' %(commitConfig.get("工作目录"), \
                                                                                   commitConfig.get("测试架构"), \
                                                                                   commitConfig.get("测试架构"),
                                                                                   cmdTc)
