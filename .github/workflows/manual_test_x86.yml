@@ -19,7 +19,7 @@ jobs:
         arch: [x86_64]
     env:
         ARCH: ${{matrix.arch}}
-        ARCH_TEST: ${{matrix.arch}}
+        # ARCH_TEST: ${{matrix.arch}}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -43,15 +43,24 @@ jobs:
       #   run: |
       #       python -c 'import os;print(os.environ.get("ARCH"))'
       #       sudo python env.py
-      - name: os_test_test
-        shell: python
+      - name: config.py key_value set
         run: |
-          import os
-          dir=os.environ["GITHUB_WORKSPACE"]
-          print("---------------------------")
-          print(dir)
-          print(os.environ)
-          print("----------------------------")
+              cd pytest
+              sed -i "s/\"测试架构\": .*/\"测试架构\": \"$my_ARCH\",/" config.py
+              sed -i "s/\"提交者\": .*/\"提交者\": \"$my_GITHUB_ACTOR\",/" config.py
+              sed -i "s/\"提交ID\": .*/\"提交ID\": \"$my_GITHUB_SHA\",/" config.py
+              sed -i "s/\"提交时间\": .*/\"提交时间\": \"$my_COMMIT_TIME\",/" config.py
+              sed -i "s/\"仓库名\": .*/\"仓库名\": \"$my_GITHUB_REPOSITORY\",/" config.py
+              sed -i "s/\"分支名\": .*/\"分支名\": \"$my_GITHUB_REF_NAME\",/" config.py
+              sed -i "s/\"工作目录\": .*/\"工作目录\": \"my_$GITHUB_WORKSPACE\"/" config.py
+        env:
+          my_ARCH: ${{ env.ARCH }}
+          my_GITHUB_ACTOR: ${{ github.actor }}
+          my_GITHUB_SHA: ${{ github.sha }}
+          my_COMMIT_TIME: ${{ env.COMMIT_TIME }}
+          my_GITHUB_REPOSITORY: ${{ github.repository }}
+          my_GITHUB_REF_NAME: ${{ github.ref_name }}
+          my_GITHUB_WORKSPACE: ${{ github.workspace }}
           
 
 
