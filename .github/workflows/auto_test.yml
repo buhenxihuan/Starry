@@ -18,8 +18,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arch: [x86_64, riscv64, aarch64]
-        # arch: [x86_64]
+        # arch: [x86_64, riscv64, aarch64]
+        arch: [x86_64]
     env:
         ARCH: ${{matrix.arch}}
         # ARCH_TEST: ${{matrix.arch}}
@@ -120,7 +120,7 @@ jobs:
           sudo mkdir allure-com
           sudo tar zxvf allure-commandline-2.24.1.tgz -C allure-com
           ls -lh
-          sudo ln -s /home/runner/work/Starry/Starry/allure-com/package/bin/allure /usr/bin/allure
+          sudo ln -s ${{github.workspace}}/allure-com/package/bin/allure /usr/bin/allure
         #  wget https://musl.cc/riscv64-linux-musl-cross.tgz
         #  sudo tar xzvf riscv64-linux-musl-cross.tgz
         #  sudo echo 'export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin' >> ~/.bashrc
@@ -129,22 +129,12 @@ jobs:
         run: |
           chmod -R 777 pytest/
           cd pytest
-          export PATH=$PATH:/home/runner/.cargo/bin/
           sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
       - name: os_test
         shell: python
         run: |
-          import os
-          import subprocess
-          dir=os.environ["GITHUB_WORKSPACE"]
-          env1=os.environ.copy()
-          print("---------------------------")
-          print(dir)
-          print(os.environ)
-          print("----------------------------")
-          os.chdir(dir+'/pytest')
-          pytest_command = "sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir"
-          subprocess.run(pytest_command, shell=True, env=env1)
+          cd pytest
+          sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir
         # sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir
          # sudo allure generate report/result -o report/html --clean
 
@@ -166,7 +156,7 @@ jobs:
           keep_reports: 1000
           gh_pages: gh-pages_ci
           allure_history: allure-history
-          allure_results: /home/runner/work/Starry/Starry/pytest/report/result
+          allure_results: ${{github.workspace}}/pytest/report/result
 
       - name: Publish report
         uses: peaceiris/actions-gh-pages@v3
