@@ -180,7 +180,7 @@ def step_01_uni(cmdRun, cmdApp):
 
 @allure.step("测试步骤一：执行测试")
 def step_01_mono(cmdRun, cmdTc):
-    _cmd = 'cd %s && ./build_img.sh %s && make A=apps/oscomp ARCH=%s TC=%s run' %(commitConfig.get("工作目录"), \
+    _cmd = 'cd %s && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin && ./build_img.sh %s && make A=apps/oscomp ARCH=%s TC=%s run' %(commitConfig.get("工作目录"), \
                                                                                   commitConfig.get("测试架构"), \
                                                                                   commitConfig.get("测试架构"),
                                                                                   cmdTc)
