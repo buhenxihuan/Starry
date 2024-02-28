@@ -1,0 +1,49 @@
+INFO     root:test_arceos.py:282 kernel_type=monokernel
+INFO     root:test_arceos.py:283 test_cmd=export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin &&              cd /home/runner/work/Starry/Starry && ./build_img.sh aarch64 && make A=apps/oscomp ARCH=aarch64 TC=libc-dynamic run
+INFO     root:test_arceos.py:285 res=30+0 records in
+30+0 records out
+125829120 bytes (126 MB, 120 MiB) copied, 0.120397 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+Copying aarch64 fat32 testsuits-aarch64-linux-musl/* to disk
+    [92;1mBuilding[0m App: oscomp, Arch: aarch64, Platform: aarch64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target aarch64-unknown-none-softfloat --target-dir /home/runner/work/Starry/Starry/target --release  --manifest-path apps/oscomp/Cargo.toml --features "syscall_entry/log-level-off syscall_entry/fp_simd syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net syscall_entry/fatfs"[0m
+warning: unused variable: `kernel_base`
+   --> modules/axtask/src/task.rs:778:9
+    |
+778 |     let kernel_base = kernel_sp - trap_frame_size;
+    |         ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_kernel_base`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `frame_base`
+   --> modules/axtask/src/task.rs:770:42
+    |
+770 | pub fn first_into_user(kernel_sp: usize, frame_base: usize) -> ! {
+    |                                          ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_frame_base`
+
+   Compiling axdriver v0.1.0 (/home/runner/work/Starry/Starry/modules/axdriver)
+warning: `axtask` (lib) generated 2 warnings (run `cargo fix --lib -p axtask` to apply 2 suggestions)
+   Compiling axfs v0.1.0 (/home/runner/work/Starry/Starry/modules/axfs)
+   Compiling axnet v0.1.0 (/home/runner/work/Starry/Starry/modules/axnet)
+error[E0412]: cannot find type `Kstat` in this scope
+  --> modules/axfs/src/api/port.rs:89:18
+   |
+89 | impl Default for Kstat {
+   |                  ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Kstat` in this scope
+   --> modules/axfs/src/api/port.rs:299:36
+    |
+299 |     fn get_stat(&self) -> AxResult<Kstat> {
+    |                                    ^^^^^ not found in this scope
+    |
+help: you might be missing a type parameter
+    |
+266 | pub trait FileIO<Kstat>: AsAny + Send + Sync {
+    |                 +++++++
+
+For more information about this error, try `rustc --explain E0412`.
+error: could not compile `axfs` (lib) due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+make: *** [scripts/make/build.mk:41: _cargo_build] Error 101
+INFO     root:test_arceos.py:289 用例结果信息--->测试失败，命令执行失败
