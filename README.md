@@ -171,9 +171,3 @@ $ ./build_img.sh gcc
 
 
 
- sed -i "s/\"提交者\": .*/\"提交者\": \"$my_GITHUB_ACTOR\",/" config.py
-              sed -i "s/\"提交ID\": .*/\"提交ID\": \"$my_GITHUB_SHA\",/" config.py
-              sed -i "s/\"提交时间\": .*/\"提交时间\": \"$my_COMMIT_TIME\",/" config.py
-              sed -i "s/\"仓库名\": .*/\"仓库名\": \"$my_GITHUB_REPOSITORY\",/" config.py
-              sed -i "s/\"分支名\": .*/\"分支名\": \"$my_GITHUB_REF_NAME\",/" config.py
-              sed -i "s/\"工作目录\": .*/\"工作目录\": \"$my_GITHUB_WORKSPACE\"/" config.py
