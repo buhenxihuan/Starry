@@ -5,7 +5,7 @@ on:
   pull_request:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "*/20 * * * *"
   
 
 env:
@@ -26,9 +26,6 @@ jobs:
         # ARCH_TEST: ${{matrix.arch}}
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: x86_64
-          submodules: 'recursive'
       # - name: test
       #   run: |
       #     pwd
@@ -41,8 +38,6 @@ jobs:
         run: |
             COMMIT_TIME=$(date -d '+8 hour')
             echo "COMMIT_TIME=$COMMIT_TIME" >> $GITHUB_ENV
-            python -c 'import os;print(os.environ.get("ARCH"))'
-            echo $GITHUB_ENV
       # - name: test env
       #   run: |
       #       python -c 'import os;print(os.environ.get("ARCH"))'
