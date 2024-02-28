@@ -1,4 +1,4 @@
-name: manual Test CI_x86
+name: auto_test_ci
 
 on: 
   push:
