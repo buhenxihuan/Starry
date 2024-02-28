@@ -167,7 +167,6 @@ endif
 make_testcase:
   $(shell sed 's/TESTCASE/"$(TC)"/' apps/oscomp/src/main_template.rs > apps/oscomp/src/main.rs)
 
-
 make_bin: 
   ifeq ($(STRUCT), Monolithic)
 		$(call make_bin)

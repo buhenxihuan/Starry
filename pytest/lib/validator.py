@@ -27,3 +27,5 @@ class validator:
             return True, "测试成功，成功用例条数：%s" %len(m2)
 
         return True, "测试成功"
+
+
