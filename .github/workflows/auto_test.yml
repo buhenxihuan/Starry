@@ -131,7 +131,6 @@ jobs:
           cd pytest
           sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
       - name: os_test
-        shell: python
         run: |
           cd pytest
           sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir
