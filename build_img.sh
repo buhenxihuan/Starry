@@ -85,6 +85,7 @@ echo "Copying $arch $fs $FILE/* to disk"
 if [ "$arch != riscv64" ]; then
 	sudo cp -r ./testcases/$FILE/* ./mnt/
 else
+	echo "sdcard"
 	sudo cp -r ./testcases/sdcard/* ./mnt/
 fi
 sudo umount mnt
