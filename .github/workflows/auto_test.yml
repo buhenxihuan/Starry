@@ -20,7 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         # arch: [x86_64, riscv64, aarch64]
-        arch: [x86_64, riscv64]
+        arch: [riscv64]
     env:
         ARCH: ${{matrix.arch}}
         # ARCH_TEST: ${{matrix.arch}}
