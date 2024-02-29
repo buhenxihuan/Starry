@@ -204,7 +204,7 @@ pub const LIBC_STATIC_9_TESTCASES: &[&str] = &[
 #[allow(dead_code)]
 /// libc静态测例
 pub const LIBC_STATIC_TESTCASES: &[&str] = &[
-    "busybox sh run_static.sh",
+    "busybox sh ./run-static.sh",
     // "./runtest.exe -w entry-static.exe argv",
     // "./runtest.exe -w entry-static.exe basename",
     // "./runtest.exe -w entry-static.exe clocale_mbfuncs",
@@ -319,7 +319,7 @@ pub const LIBC_STATIC_TESTCASES: &[&str] = &[
 /// 来自 libc 的动态测例
 #[allow(dead_code)]
 pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
-    "busybox sh run-dynamic.sh",
+    "busybox sh ./run-dynamic.sh",
     // "./runtest.exe -w entry-dynamic.exe argv.dout",
     // "./runtest.exe -w entry-dynamic.exe basename.dout",
     // "./runtest.exe -w entry-dynamic.exe clocale_mbfuncs.dout",
