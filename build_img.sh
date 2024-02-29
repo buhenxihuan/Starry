@@ -82,7 +82,11 @@ sudo mount disk.img mnt
 
 # 根据命令行参数生成对应的测例
 echo "Copying $arch $fs $FILE/* to disk"
-sudo cp -r ./testcases/$FILE/* ./mnt/
+if [ "$arch != riscv64" ]; then
+	sudo cp -r ./testcases/$FILE/* ./mnt/
+else
+	sudo cp -r ./testcases/sdcard/* ./mnt/
+fi
 sudo umount mnt
 sudo rm -rf mnt
 sudo chmod 777 disk.img
