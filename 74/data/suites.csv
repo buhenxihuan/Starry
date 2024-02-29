@@ -1,0 +1,78 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Thu Feb 29 04:09:33 GMT 2024","Thu Feb 29 04:09:55 GMT 2024","21906","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""0d6e4e9edcb9379daaa5ca451d51ade0e0bceab1"",
+""提交时间"": ""Thu Feb 29 12:07:10 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试失败，失败用例条数：108
+"
+"passed","Thu Feb 29 04:09:55 GMT 2024","Thu Feb 29 04:10:06 GMT 2024","10962","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""0d6e4e9edcb9379daaa5ca451d51ade0e0bceab1"",
+""提交时间"": ""Thu Feb 29 12:07:10 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功
+"
+"failed","Thu Feb 29 04:08:45 GMT 2024","Thu Feb 29 04:09:33 GMT 2024","48141","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""0d6e4e9edcb9379daaa5ca451d51ade0e0bceab1"",
+""提交时间"": ""Thu Feb 29 12:07:10 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试失败，失败用例条数：1
+"
+"passed","Thu Feb 29 04:17:28 GMT 2024","Thu Feb 29 04:35:43 GMT 2024","1095082","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""0d6e4e9edcb9379daaa5ca451d51ade0e0bceab1"",
+""提交时间"": ""Thu Feb 29 12:07:10 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功
+"
+"passed","Thu Feb 29 04:10:28 GMT 2024","Thu Feb 29 04:17:28 GMT 2024","419898","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""0d6e4e9edcb9379daaa5ca451d51ade0e0bceab1"",
+""提交时间"": ""Thu Feb 29 12:07:10 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功
+"
+"passed","Thu Feb 29 04:10:17 GMT 2024","Thu Feb 29 04:10:28 GMT 2024","11031","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""0d6e4e9edcb9379daaa5ca451d51ade0e0bceab1"",
+""提交时间"": ""Thu Feb 29 12:07:10 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功
+"
+"failed","Thu Feb 29 04:10:06 GMT 2024","Thu Feb 29 04:10:17 GMT 2024","11300","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""0d6e4e9edcb9379daaa5ca451d51ade0e0bceab1"",
+""提交时间"": ""Thu Feb 29 12:07:10 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试失败，失败用例条数：6
+"
