@@ -1,0 +1,43 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"passed","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:39 GMT 2024","32959","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""riscv64"",
+""文件系统"": ""FILE_SYSTEM"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""7b0f4c4b38b297844e0a6e5bd4f28b22f844242e"",
+""提交时间"": ""Tue Mar  5 20:01:38 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功，成功用例条数：109，失败用例条数：0，错误信息：
+
+"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"failed","Tue Mar 05 12:03:20 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","45361","testcase","test_arceos","","","","测试ArceOS 代码扫描 基本功能","码仓提交信息===>{
+""测试架构"": ""riscv64"",
+""文件系统"": ""FILE_SYSTEM"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""7b0f4c4b38b297844e0a6e5bd4f28b22f844242e"",
+""提交时间"": ""Tue Mar  5 20:01:38 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试失败，命令执行失败
+"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
+"skipped","Tue Mar 05 12:04:06 GMT 2024","Tue Mar 05 12:04:06 GMT 2024","0","testcase","test_arceos","","","","测试ArceOS 微内核 基本功能","测试用例简要描述"
