@@ -671,27 +671,6 @@ pub fn run_testcases(case: &'static str) {
         "sdcard" => (Box::new(SDCARD_TESTCASES.iter()), SDCARD_TESTCASES.len()),
 
         "ostrain" => (Box::new(OSTRAIN_TESTCASES.iter()), OSTRAIN_TESTCASES.len()),
-        "libc-static-0" => (Box::new(LIBC_STATIC_0_TESTCASES.iter()), LIBC_STATIC_0_TESTCASES.len()),
-        "libc-static-1" => (Box::new(LIBC_STATIC_1_TESTCASES.iter()), LIBC_STATIC_1_TESTCASES.len()),
-        "libc-static-2" => (Box::new(LIBC_STATIC_2_TESTCASES.iter()), LIBC_STATIC_2_TESTCASES.len()),
-        "libc-static-3" => (Box::new(LIBC_STATIC_3_TESTCASES.iter()), LIBC_STATIC_3_TESTCASES.len()),
-        "libc-static-4" => (Box::new(LIBC_STATIC_4_TESTCASES.iter()), LIBC_STATIC_4_TESTCASES.len()),
-        "libc-static-5" => (Box::new(LIBC_STATIC_5_TESTCASES.iter()), LIBC_STATIC_5_TESTCASES.len()),
-        "libc-static-6" => (Box::new(LIBC_STATIC_6_TESTCASES.iter()), LIBC_STATIC_6_TESTCASES.len()),
-        "libc-static-7" => (Box::new(LIBC_STATIC_7_TESTCASES.iter()), LIBC_STATIC_7_TESTCASES.len()),
-        "libc-static-8" => (Box::new(LIBC_STATIC_8_TESTCASES.iter()), LIBC_STATIC_8_TESTCASES.len()),
-        "libc-static-9" => (Box::new(LIBC_STATIC_9_TESTCASES.iter()), LIBC_STATIC_9_TESTCASES.len()),
-
-
-        "libc-dynamic-0" => (Box::new(LIBC_DYNAMIC_0_TESTCASES.iter()), LIBC_DYNAMIC_0_TESTCASES.len()),
-        "libc-dynamic-1" => (Box::new(LIBC_DYNAMIC_1_TESTCASES.iter()), LIBC_DYNAMIC_1_TESTCASES.len()),
-        "libc-dynamic-2" => (Box::new(LIBC_DYNAMIC_2_TESTCASES.iter()), LIBC_DYNAMIC_2_TESTCASES.len()),
-        "libc-dynamic-3" => (Box::new(LIBC_DYNAMIC_3_TESTCASES.iter()), LIBC_DYNAMIC_3_TESTCASES.len()),
-        "libc-dynamic-4" => (Box::new(LIBC_DYNAMIC_4_TESTCASES.iter()), LIBC_DYNAMIC_5_TESTCASES.len()),
-        "libc-dynamic-6" => (Box::new(LIBC_DYNAMIC_6_TESTCASES.iter()), LIBC_DYNAMIC_6_TESTCASES.len()),
-        "libc-dynamic-7" => (Box::new(LIBC_DYNAMIC_7_TESTCASES.iter()), LIBC_DYNAMIC_7_TESTCASES.len()),
-        "libc-dynamic-8" => (Box::new(LIBC_DYNAMIC_8_TESTCASES.iter()), LIBC_DYNAMIC_8_TESTCASES.len()),
-        "libc-dynamic-9" => (Box::new(LIBC_DYNAMIC_9_TESTCASES.iter()), LIBC_DYNAMIC_9_TESTCASES.len()),
 
         "cyclictest" => (Box::new(CYCLICTEST_TESTCASES.iter()), CYCLICTEST_TESTCASES.len()),
 
