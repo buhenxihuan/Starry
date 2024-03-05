@@ -19,13 +19,14 @@ class validator:
             return False, "测试失败，命令执行失败"
 
         m1 = re.findall('( fault | error |^fail |^fail!|Segmentation fault)', caseRes, re.IGNORECASE|re.MULTILINE)
+        m2 = re.findall('(pass|success)', caseRes, re.IGNORECASE|re.MULTILINE)
+        m3 = re.findall('(.*not found|.*unknown operand)', caseRes, re.IGNORECASE|re.MULTILINE)
+        print(m3)
         if m1:
-            return False, "测试失败，失败用例条数：%s" %len(m1)
-
-        m2 = re.findall('(^pass|^success)', caseRes, re.IGNORECASE|re.MULTILINE)
+            succCaseNum = len(m2) if m2 else 0
+            return False, "测试失败，失败用例条数：%s，成功用例条数：%s，错误信息：\n%s" %(len(m1), succCaseNum, '\n'.join(m3))
         if m2:
-            return True, "测试成功，成功用例条数：%s" %len(m2)
+            failCaseNum = len(m1) if m1 else 0
+            return True, "测试成功，成功用例条数：%s，失败用例条数：%s，错误信息：\n%s" %(len(m2), failCaseNum, '\n'.join(m3))
 
         return True, "测试成功"
-
-

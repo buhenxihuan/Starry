@@ -24,6 +24,11 @@ excelConfig = {
 
 }
 
+clippyCmdList = [
+    "apps/oscomp"
+]
+
+
 uniCmdList = [
     "apps/helloworld", 
     "apps/memtest", 
@@ -80,7 +85,7 @@ monoCmdList = [
 # ]
 
 monoTcList = [
-    # "busybox",
+    "busybox",
     "libc-static",
     "libc-dynamic",
     "netperf",
@@ -94,6 +99,7 @@ monoTcList = [
 
 commitConfig = {
     "测试架构": "ARCH",
+    "文件系统": "FILE_SYSTEM",
     "提交者": "GITHUB_ACTOR",
     "提交ID": "GITHUB_SHA",
     "提交时间": "COMMIT_TIME",
