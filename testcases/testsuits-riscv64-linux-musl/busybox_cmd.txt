@@ -11,6 +11,7 @@ dmesg
 du
 expr 1 + 1
 false
+ls:wq
 true
 which ls
 uname
