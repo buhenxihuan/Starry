@@ -132,7 +132,8 @@ jobs:
           sudo python3 -m pytest -sv --alluredir report/result/${{matrix.arch}} testcase/test_arceos.py --clean-alluredir
         # sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir
          # sudo allure generate report/result -o report/html --clean
-
+      - name: ls report
+        run: ls -l ${{github.workspace}}/pytest/report/result
 
 
 
@@ -152,12 +153,8 @@ jobs:
           gh_pages: gh-pages_ci
           allure_history: allure-history
           allure_results: ${{github.workspace}}/pytest/report/result
-          github_run_num: ${{github.run_number}}/${{matrix.arch}}
+          report_url: ${report_url}/${{matrix.arch}}
 
-      - name: ls report
-        run:
-            ls -l ${{github.workspace}}/pytest/report/result
-            ls -l ${{github.workspace}}/pytest/report/
 
 
       - name: Publish report
