@@ -1,0 +1,599 @@
+INFO     root:test_arceos.py:75 kernel_type=monokernel
+INFO     root:test_arceos.py:76 test_cmd=export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin &&              cd /home/runner/work/Starry/Starry && ./build_img.sh x86_64 FILE_SYSTEM && make A=apps/oscomp ARCH=x86_64 TC=netperf run
+INFO     root:test_arceos.py:78 res=true
+30+0 records in
+30+0 records out
+125829120 bytes (126 MB, 120 MiB) copied, 0.122624 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+Copying x86_64 fat32 testsuits-x86_64-linux-musl/* to disk
+    [92;1mBuilding[0m App: oscomp, Arch: x86_64, Platform: x86_64-qemu-q35, App type: rust
+[37mcargo build[0m [90m--target x86_64-unknown-none --target-dir /home/runner/work/Starry/Starry/target --release  --manifest-path apps/oscomp/Cargo.toml --features "syscall_entry/log-level-off syscall_entry/bus-pci syscall_entry/fp_simd syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net syscall_entry/fatfs"[0m
+   Compiling axdriver v0.1.0 (/home/runner/work/Starry/Starry/modules/axdriver)
+   Compiling axfs v0.1.0 (/home/runner/work/Starry/Starry/modules/axfs)
+   Compiling axnet v0.1.0 (/home/runner/work/Starry/Starry/modules/axnet)
+   Compiling axmem v0.1.0 (/home/runner/work/Starry/Starry/modules/axmem)
+   Compiling syscall_utils v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_utils)
+   Compiling axprocess v0.1.0 (/home/runner/work/Starry/Starry/modules/axprocess)
+   Compiling axruntime v0.1.0 (/home/runner/work/Starry/Starry/modules/axruntime)
+   Compiling syscall_fs v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_fs)
+   Compiling axfeat v0.1.0 (/home/runner/work/Starry/Starry/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/Starry/Starry/api/arceos_api)
+   Compiling syscall_net v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_net)
+   Compiling syscall_task v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_task)
+   Compiling syscall_mem v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_mem)
+   Compiling syscall_entry v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_entry)
+error[E0425]: cannot find value `LIBC_STATIC_0_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:674:38
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+674 |           "libc-static-0" => (Box::new(LIBC_STATIC_0_TESTCASES.iter()), LIBC_STATIC_0_TESTCASES.len()),
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_0_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:674:71
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+674 |           "libc-static-0" => (Box::new(LIBC_STATIC_0_TESTCASES.iter()), LIBC_STATIC_0_TESTCASES.len()),
+    |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_1_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:675:38
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+675 |           "libc-static-1" => (Box::new(LIBC_STATIC_1_TESTCASES.iter()), LIBC_STATIC_1_TESTCASES.len()),
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_1_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:675:71
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+675 |           "libc-static-1" => (Box::new(LIBC_STATIC_1_TESTCASES.iter()), LIBC_STATIC_1_TESTCASES.len()),
+    |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_2_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:676:38
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+676 |           "libc-static-2" => (Box::new(LIBC_STATIC_2_TESTCASES.iter()), LIBC_STATIC_2_TESTCASES.len()),
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_2_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:676:71
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+676 |           "libc-static-2" => (Box::new(LIBC_STATIC_2_TESTCASES.iter()), LIBC_STATIC_2_TESTCASES.len()),
+    |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_3_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:677:38
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+677 |           "libc-static-3" => (Box::new(LIBC_STATIC_3_TESTCASES.iter()), LIBC_STATIC_3_TESTCASES.len()),
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_3_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:677:71
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+677 |           "libc-static-3" => (Box::new(LIBC_STATIC_3_TESTCASES.iter()), LIBC_STATIC_3_TESTCASES.len()),
+    |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_4_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:678:38
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+678 |           "libc-static-4" => (Box::new(LIBC_STATIC_4_TESTCASES.iter()), LIBC_STATIC_4_TESTCASES.len()),
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_4_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:678:71
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+678 |           "libc-static-4" => (Box::new(LIBC_STATIC_4_TESTCASES.iter()), LIBC_STATIC_4_TESTCASES.len()),
+    |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_5_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:679:38
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+679 |           "libc-static-5" => (Box::new(LIBC_STATIC_5_TESTCASES.iter()), LIBC_STATIC_5_TESTCASES.len()),
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_5_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:679:71
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+679 |           "libc-static-5" => (Box::new(LIBC_STATIC_5_TESTCASES.iter()), LIBC_STATIC_5_TESTCASES.len()),
+    |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_6_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:680:38
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+680 |           "libc-static-6" => (Box::new(LIBC_STATIC_6_TESTCASES.iter()), LIBC_STATIC_6_TESTCASES.len()),
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_6_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:680:71
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+680 |           "libc-static-6" => (Box::new(LIBC_STATIC_6_TESTCASES.iter()), LIBC_STATIC_6_TESTCASES.len()),
+    |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_7_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:681:38
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+681 |           "libc-static-7" => (Box::new(LIBC_STATIC_7_TESTCASES.iter()), LIBC_STATIC_7_TESTCASES.len()),
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_7_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:681:71
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+681 |           "libc-static-7" => (Box::new(LIBC_STATIC_7_TESTCASES.iter()), LIBC_STATIC_7_TESTCASES.len()),
+    |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_8_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:682:38
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+682 |           "libc-static-8" => (Box::new(LIBC_STATIC_8_TESTCASES.iter()), LIBC_STATIC_8_TESTCASES.len()),
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_8_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:682:71
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+682 |           "libc-static-8" => (Box::new(LIBC_STATIC_8_TESTCASES.iter()), LIBC_STATIC_8_TESTCASES.len()),
+    |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_9_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:683:38
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+683 |           "libc-static-9" => (Box::new(LIBC_STATIC_9_TESTCASES.iter()), LIBC_STATIC_9_TESTCASES.len()),
+    |                                        ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_STATIC_9_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:683:71
+    |
+71  | / pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+72  | |     "busybox sh ./run-static.sh",
+73  | |     // "./runtest.exe -w entry-static.exe argv",
+74  | |     // "./runtest.exe -w entry-static.exe basename",
+...   |
+181 | |     // "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+182 | | ];
+    | |__- similarly named constant `LIBC_STATIC_TESTCASES` defined here
+...
+683 |           "libc-static-9" => (Box::new(LIBC_STATIC_9_TESTCASES.iter()), LIBC_STATIC_9_TESTCASES.len()),
+    |                                                                         ^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_STATIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_0_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:686:39
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+686 |           "libc-dynamic-0" => (Box::new(LIBC_DYNAMIC_0_TESTCASES.iter()), LIBC_DYNAMIC_0_TESTCASES.len()),
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_0_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:686:73
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+686 |           "libc-dynamic-0" => (Box::new(LIBC_DYNAMIC_0_TESTCASES.iter()), LIBC_DYNAMIC_0_TESTCASES.len()),
+    |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_1_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:687:39
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+687 |           "libc-dynamic-1" => (Box::new(LIBC_DYNAMIC_1_TESTCASES.iter()), LIBC_DYNAMIC_1_TESTCASES.len()),
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_1_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:687:73
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+687 |           "libc-dynamic-1" => (Box::new(LIBC_DYNAMIC_1_TESTCASES.iter()), LIBC_DYNAMIC_1_TESTCASES.len()),
+    |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_2_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:688:39
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+688 |           "libc-dynamic-2" => (Box::new(LIBC_DYNAMIC_2_TESTCASES.iter()), LIBC_DYNAMIC_2_TESTCASES.len()),
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_2_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:688:73
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+688 |           "libc-dynamic-2" => (Box::new(LIBC_DYNAMIC_2_TESTCASES.iter()), LIBC_DYNAMIC_2_TESTCASES.len()),
+    |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_3_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:689:39
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+689 |           "libc-dynamic-3" => (Box::new(LIBC_DYNAMIC_3_TESTCASES.iter()), LIBC_DYNAMIC_3_TESTCASES.len()),
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_3_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:689:73
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+689 |           "libc-dynamic-3" => (Box::new(LIBC_DYNAMIC_3_TESTCASES.iter()), LIBC_DYNAMIC_3_TESTCASES.len()),
+    |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_4_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:690:39
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+690 |           "libc-dynamic-4" => (Box::new(LIBC_DYNAMIC_4_TESTCASES.iter()), LIBC_DYNAMIC_5_TESTCASES.len()),
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_5_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:690:73
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+690 |           "libc-dynamic-4" => (Box::new(LIBC_DYNAMIC_4_TESTCASES.iter()), LIBC_DYNAMIC_5_TESTCASES.len()),
+    |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_6_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:691:39
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+691 |           "libc-dynamic-6" => (Box::new(LIBC_DYNAMIC_6_TESTCASES.iter()), LIBC_DYNAMIC_6_TESTCASES.len()),
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_6_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:691:73
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+691 |           "libc-dynamic-6" => (Box::new(LIBC_DYNAMIC_6_TESTCASES.iter()), LIBC_DYNAMIC_6_TESTCASES.len()),
+    |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_7_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:692:39
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+692 |           "libc-dynamic-7" => (Box::new(LIBC_DYNAMIC_7_TESTCASES.iter()), LIBC_DYNAMIC_7_TESTCASES.len()),
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_7_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:692:73
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+692 |           "libc-dynamic-7" => (Box::new(LIBC_DYNAMIC_7_TESTCASES.iter()), LIBC_DYNAMIC_7_TESTCASES.len()),
+    |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_8_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:693:39
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+693 |           "libc-dynamic-8" => (Box::new(LIBC_DYNAMIC_8_TESTCASES.iter()), LIBC_DYNAMIC_8_TESTCASES.len()),
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_8_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:693:73
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+693 |           "libc-dynamic-8" => (Box::new(LIBC_DYNAMIC_8_TESTCASES.iter()), LIBC_DYNAMIC_8_TESTCASES.len()),
+    |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_9_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:694:39
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+694 |           "libc-dynamic-9" => (Box::new(LIBC_DYNAMIC_9_TESTCASES.iter()), LIBC_DYNAMIC_9_TESTCASES.len()),
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+error[E0425]: cannot find value `LIBC_DYNAMIC_9_TESTCASES` in this scope
+   --> ulib/axstarry/syscall_entry/src/test.rs:694:73
+    |
+186 | / pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+187 | |     "busybox sh ./run-dynamic.sh",
+188 | |     // "./runtest.exe -w entry-dynamic.exe argv.dout",
+189 | |     // "./runtest.exe -w entry-dynamic.exe basename.dout",
+...   |
+299 | |     // "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+300 | | ];
+    | |__- similarly named constant `LIBC_DYNAMIC_TESTCASES` defined here
+...
+694 |           "libc-dynamic-9" => (Box::new(LIBC_DYNAMIC_9_TESTCASES.iter()), LIBC_DYNAMIC_9_TESTCASES.len()),
+    |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `LIBC_DYNAMIC_TESTCASES`
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `syscall_entry` (lib) due to 38 previous errors
+warning: build failed, waiting for other jobs to finish...
+make: *** [scripts/make/build.mk:41: _cargo_build] Error 101
+INFO     root:test_arceos.py:82 用例结果信息--->测试失败，命令执行失败

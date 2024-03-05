@@ -1,0 +1,8 @@
+INFO     root:test_arceos.py:26 测试前置步骤一：初始化cmd库
+INFO     root:test_arceos.py:27 Setup for class with cmd
+INFO     root:test_arceos.py:38 test_type=clippy
+INFO     root:test_arceos.py:39 test_cmd=cd /home/runner/work/Starry/Starry && make A=apps/oscomp ARCH=x86_64 clippy
+INFO     root:test_arceos.py:41 res=[37mcargo clippy[0m [90m--all-features --workspace --exclude axlog --target x86_64-unknown-none [0m
+make: cargo: No such file or directory
+make: *** [Makefile:196: clippy] Error 127
+INFO     root:test_arceos.py:45 用例结果信息--->测试失败，命令执行失败
