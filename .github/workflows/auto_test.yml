@@ -129,14 +129,13 @@ jobs:
       - name: os_test
         run: |
           cd pytest
-          sudo python3 -m pytest -sv --alluredir report/result/${{matrix.arch}} testcase/test_arceos.py --clean-alluredir
+          sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
         # sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir
          # sudo allure generate report/result -o report/html --clean
+
       - name: ls report
         if: always()
         run: ls -l ${{github.workspace}}/pytest/report/result
-
-
 
       - name: load allure history
         uses: actions/checkout@v3
@@ -154,9 +153,7 @@ jobs:
           gh_pages: gh-pages_ci
           allure_history: allure-history
           allure_results: ${{github.workspace}}/pytest/report/result
-          report_url: ${report_url}/${{matrix.arch}}
-
-
+          subfolder: ${{matrix.arch}}
 
       - name: Publish report
         uses: peaceiris/actions-gh-pages@v3
