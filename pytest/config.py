@@ -85,9 +85,9 @@ monoCmdList = [
 # ]
 
 monoTcList = [
-    "busybox",
+    # "busybox",
     "libc-static",
-    "libc-dynamic",
+    # "libc-dynamic",
     # "netperf",
     # "iperf",
     # "cyclictest",
