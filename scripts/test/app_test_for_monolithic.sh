@@ -53,7 +53,7 @@ function run_and_compare() {
     echo -ne "    run with \"${BLOD_C}$args${END_C}\": "
     # if the app contain "apps/oscomp", then make disk img
     if [[ $APP =~ "apps/oscomp" ]]; then
-        sh ./build_img.sh riscv64 sdcard
+        sh ./build_img.sh $ARCH sdcard
     fi
     make -C "$ROOT" A="$APP" $args > "$actual" 2>&1
     if [ $? -ne 0 ]; then
