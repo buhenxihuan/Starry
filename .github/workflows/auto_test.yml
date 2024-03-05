@@ -152,7 +152,7 @@ jobs:
           gh_pages: gh-pages_ci
           allure_history: allure-history
           allure_results: ${{github.workspace}}/pytest/report/result
-          github_run_num: ${{ github.run_id }}/${{matrix.arch}}
+          github_run_num: ${{ github.run_number }}/${{matrix.arch}}
 
       - name: Publish report
         uses: peaceiris/actions-gh-pages@v3
