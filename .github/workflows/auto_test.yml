@@ -137,6 +137,10 @@ jobs:
         if: always()
         run: ls -l ${{github.workspace}}/pytest/report/result
 
+      - name: deal parrale
+        if: always()
+        run: if [ "${{matrix.arch}}" = "riscv64" ]; then sleep 40; fi
+
       - name: load allure history
         uses: actions/checkout@v3
         if: always()
@@ -155,9 +159,7 @@ jobs:
           allure_results: ${{github.workspace}}/pytest/report/result
           subfolder: ${{matrix.arch}}
       
-      - name: deal parrale
-        if: always()
-        run: if [ "${{matrix.arch}}" = "riscv64" ]; then sleep 20; fi
+
 
       - name: Publish report
         uses: peaceiris/actions-gh-pages@v3
