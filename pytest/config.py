@@ -88,11 +88,11 @@ monoTcList = [
     "busybox",
     "libc-static",
     "libc-dynamic",
-    "netperf",
-    "iperf",
-    "cyclictest",
-    "iozone",
-    "lmbench",
+    # "netperf",
+    # "iperf",
+    # "cyclictest",
+    # "iozone",
+    # "lmbench",
     # "unixbench",
     # "all"
 ]
