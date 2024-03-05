@@ -16,6 +16,10 @@
 
 通过修改 `ulib/axstarry/syscall_entry/test.rs` 中的 `SDCARD_TESTCASES` 常量，可以选择内核启动后运行的程序。例如如果想要开机启动终端，则需要将常量的值改为 `"busybox sh"`。
 
+
+### build_img
+build_img两个参数，$1为目标架构(x86_64和riscv64)，$2为文件系统类型（ext4或fat32）
+
 ### x86_64
 
 ```shell
@@ -37,7 +41,7 @@ make run
 
 ```
 
-如果 `./build_x86.sh` 卡住，可以[手动下载](https://github.com/oscomp/testsuits-for-oskernel/releases/download/final-x86_64/testsuits-x86_64-linux-musl.tgz)测例文件，然后把其中的 `wget` 一行注释掉并再次执行。
+如果 `./build_img.sh` 卡住，可以 [手动下载] `build_img.sh`中相应的wget 网址中的测例文件。
 
 
 ### RISC-V
