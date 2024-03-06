@@ -12,8 +12,9 @@ env:
   qemu-version: 7.1.0
   rust-toolchain: nightly
 
+
 jobs:
-  manual_test:
+  ci_test:
     name: Linux Application Image Test
     runs-on: ubuntu-22.04
     strategy:
@@ -23,25 +24,16 @@ jobs:
         arch: [riscv64,x86_64]
     env:
         ARCH: ${{matrix.arch}}
-        # ARCH_TEST: ${{matrix.arch}}
+        FS: fat32 # or ext4
     steps:
       - uses: actions/checkout@v3
-      # - name: test
-      #   run: |
-      #     pwd
-      #     ls -al
-      #     cd .github/scripts/
-      #     ls -al
 
 
       - name: Add current date into a variable
         run: |
             COMMIT_TIME=$(date -d '+8 hour')
             echo "COMMIT_TIME=$COMMIT_TIME" >> $GITHUB_ENV
-      # - name: test env
-      #   run: |
-      #       python -c 'import os;print(os.environ.get("ARCH"))'
-      #       sudo python env.py
+
       - name: config.py key_value set
         shell: sh
         run: |
@@ -53,6 +45,7 @@ jobs:
               sed -i "s#\"仓库名\": .*#\"仓库名\": \"$my_GITHUB_REPOSITORY\",#" config.py
               sed -i "s#\"分支名\": .*#\"分支名\": \"$my_GITHUB_REF_NAME\",#" config.py
               sed -i "s#\"工作目录\": .*#\"工作目录\": \"$my_GITHUB_WORKSPACE\"#" config.py
+              sed -i "s#\"文件系统\": .*#\"文件系统\": \"$my_FS\"#" config.py
         env:
           my_ARCH: ${{ env.ARCH }}
           my_GITHUB_ACTOR: ${{ github.actor }}
@@ -61,6 +54,7 @@ jobs:
           my_GITHUB_REPOSITORY: ${{ github.repository }}
           my_GITHUB_REF_NAME: ${{ github.ref_name }}
           my_GITHUB_WORKSPACE: ${{ github.workspace }}
+          my_FS: ${{env.FS}}
           
 
 
@@ -98,9 +92,6 @@ jobs:
           cd qemu-${{ env.qemu-version }} && sudo make install
           qemu-system-${{ matrix.arch }} --version
 
-      # - name: Prepare ext4fs-img
-      #   # run: cargo libc-test --arch ${{ matrix.arch }} && cargo image --arch ${{ matrix.arch }}
-      #   run: ls -lh&& ./1.sh libc-static && ls -lh
           
       - if: matrix.arch == 'riscv64'
         uses: actions-rs/install@v0.1
@@ -117,9 +108,7 @@ jobs:
           sudo tar zxvf allure-commandline-2.24.1.tgz -C allure-com
           ls -lh
           sudo ln -s ${{github.workspace}}/allure-com/package/bin/allure /usr/bin/allure
-        #  wget https://musl.cc/riscv64-linux-musl-cross.tgz
-        #  sudo tar xzvf riscv64-linux-musl-cross.tgz
-        #  sudo echo 'export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin' >> ~/.bashrc
+
       
       - name: install pytest
         run: |
@@ -130,16 +119,7 @@ jobs:
         run: |
           cd pytest
           sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
-        # sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py::test_arceos_monokernel --clean-alluredir
-         # sudo allure generate report/result -o report/html --clean
 
-      - name: ls report
-        if: always()
-        run: ls -l ${{github.workspace}}/pytest/report/result
-
-      - name: deal parrale
-        if: always()
-        run: if [ "${{matrix.arch}}" = "riscv64" ]; then sleep 40; fi
 
       - name: load allure history
         uses: actions/checkout@v3
@@ -158,6 +138,7 @@ jobs:
           allure_history: allure-history
           allure_results: ${{github.workspace}}/pytest/report/result
           subfolder: ${{matrix.arch}}
+          report_url: ${{matrix.arch}}
       
 
 
@@ -168,29 +149,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages_ci
           publish_dir: allure-history
-
-
-
-
-
-      # - name: archive
-      #   run: |
-      #     cd /home/runner/work/Starry/Starry/pytest/report
-      #     sudo tar czvf allure.log ./*
-      # - name: Setup tmate session
-      #   uses: mxschmitt/action-tmate@v3
-
-      # - name: upload result
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: allure.log
-      #     path: ${{ github.workspace }}/pytest/report/allure.log
-
-      # - name: Run tests
-      #   # # if: github.event_name != 'schedule'
-      #   # run: make ARCH=${{ matrix.arch }} FEATURES=img run LOG=info
-      #   run: make A=apps/oscomp ARCH=riscv64 FEATURES=img run LOG=debug
-      # - name: Run full tests
-      #   if: github.event_name == 'schedule'
-      #   run: cd tests && python3 linux_libc_test-qemu.py --arch ${{ matrix.arch }}
-
