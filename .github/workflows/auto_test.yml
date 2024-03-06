@@ -121,6 +121,10 @@ jobs:
           sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
 
 
+      - name: deal parrale  
+        if: always()
+        run: if [ "${{matrix.arch}}" = "riscv64" ]; then sleep 40; fi     
+        
       - name: load allure history
         uses: actions/checkout@v3
         if: always()
@@ -138,7 +142,6 @@ jobs:
           allure_history: allure-history
           allure_results: ${{github.workspace}}/pytest/report/result
           subfolder: ${{matrix.arch}}
-          report_url: ${{matrix.arch}}
       
 
 
