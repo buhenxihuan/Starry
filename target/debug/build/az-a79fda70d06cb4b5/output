@@ -1,6 +1,0 @@
-$ mkdir -p "D:\\cicv\\Starry\\target\\debug\\build\\az-a79fda70d06cb4b5\\out\\try_track_caller"
-$ cd "D:\\cicv\\Starry\\target\\debug\\build\\az-a79fda70d06cb4b5\\out\\try_track_caller"
-$ printf '%s' "// try_tra"... > "D:\\cicv\\Starry\\target\\debug\\build\\az-a79fda70d06cb4b5\\out\\try_track_caller\\try_track_caller.rs"
-$ "rustc" "try_track_caller.rs" "--emit=dep-info,metadata" >& /dev/null
-cargo:rustc-cfg=track_caller
-$ rm -r "D:\\cicv\\Starry\\target\\debug\\build\\az-a79fda70d06cb4b5\\out\\try_track_caller"

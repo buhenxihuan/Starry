@@ -1,5 +1,0 @@
-Reading config file: "defconfig.toml"
-Generating config file: D:\cicv\Starry\target\debug\build\axconfig-d989f166528d3db3\out\config.rs
-cargo:rerun-if-changed=defconfig.toml
-cargo:rerun-if-env-changed=AX_PLATFORM
-cargo:rerun-if-env-changed=AX_SMP

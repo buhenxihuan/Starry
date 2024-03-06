@@ -1,2 +1,0 @@
-cargo:rustc-cfg=platform="dummy"
-cargo:rustc-cfg=platform_family="dummy"
