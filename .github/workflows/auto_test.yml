@@ -47,6 +47,7 @@ jobs:
               sed -i "s#\"仓库名\": .*#\"仓库名\": \"$my_GITHUB_REPOSITORY\",#" config.py
               sed -i "s#\"分支名\": .*#\"分支名\": \"$my_GITHUB_REF_NAME\",#" config.py
               sed -i "s#\"工作目录\": .*#\"工作目录\": \"$my_GITHUB_WORKSPACE\"#" config.py
+              env
 
         env:
           my_ARCH: ${{ env.ARCH }}

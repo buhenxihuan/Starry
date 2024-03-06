@@ -202,7 +202,7 @@ def step_01_mono(cmdRun, cmdTc):
                                                                                       commitConfig.get("工作目录"), \
                                                                                       commitConfig.get("测试架构"), \
                                                                                       commitConfig.get("文件系统"), \
-                                                                                      commitConfig.get("测试架构"),
+                                                                                      commitConfig.get("测试架构"), \
                                                                                       cmdTc)
     logging.info("test_type=monokernel")
     logging.info("test_cmd=" + _cmd)
