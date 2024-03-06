@@ -99,11 +99,11 @@ monoTcList = [
 
 commitConfig = {
     "测试架构": "ARCH",
+    "文件系统": "FILE_SYSTEM",
     "提交者": "GITHUB_ACTOR",
     "提交ID": "GITHUB_SHA",
     "提交时间": "COMMIT_TIME",
     "仓库名": "GITHUB_REPOSITORY",
     "分支名": "GITHUB_REF_NAME",
     "工作目录": "GITHUB_WORKSPACE",
-    "文件系统": "FILE_SYSTEM",
 }
