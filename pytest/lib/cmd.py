@@ -17,7 +17,7 @@ class cmd:
     def run_cmd(self, cmd):
         # print(os.environ)
         p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        stdout, stderr = p.communicate()
+        stdout, stderr = p.communicate(timeout=300)
         result = ''
 
         # 获取输出时注意编码错误
