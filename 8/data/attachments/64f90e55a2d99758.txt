@@ -1,3 +1,0 @@
-INFO     root:test_arceos.py:58 kernel_type=monokernel
-INFO     root:test_arceos.py:59 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && ./build_img.sh sdcard && make A=apps/oscomp ARCH=riscv64 TC=libc-dynamic-7 run
-INFO     root:test_arceos.py:61 res=/bin/sh: 1: cd: can't cd to /home/runner/work/starry_ext4/starry_ext4

@@ -1,6 +1,0 @@
-INFO     root:test_arceos.py:161 测试前置步骤一：初始化cmd库
-INFO     root:test_arceos.py:162 Setup for class with cmd
-INFO     root:test_arceos.py:187 kernel_type=monokernel
-INFO     root:test_arceos.py:188 test_cmd=cd None && ./build_img.sh None && make A=apps/oscomp ARCH=None TC=libc-static run
-INFO     root:test_arceos.py:190 res=/bin/sh: 1: cd: can't cd to None
-INFO     root:test_arceos.py:192 用例结果信息=测试失败，命令执行失败
