@@ -34,7 +34,7 @@ SMP ?= 1
 MODE ?= release
 LOG ?= off
 V ?=
-TC ?= libc-static
+TC ?= busybox
 
 # App options
 A ?= apps/monolithic_userboot
@@ -126,8 +126,7 @@ export AX_LOG=$(LOG)
 export AX_TARGET=$(TARGET)
 export AX_IP=$(IP)
 export AX_GW=$(GW)
-export AX_TC=$(TC)
- $(info $(AX_TC))
+export AX_TC=$(TC)
 
 # Binutils
 CROSS_COMPILE ?= $(ARCH)-linux-musl-

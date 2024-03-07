@@ -160,7 +160,7 @@ fn get_args(command_line: &[u8]) -> Vec<String> {
 
 #[allow(unused)]
 pub fn run_batch_testcases(envs: &Vec<String>) {
-    let tc = option_env!("AX_TC").unwrap_or("test");
+    let tc = option_env!("AX_TC").unwrap_or("tc");
     let (mut test_iter) = match tc {
         "busybox" => (Box::new(BUSYBOX_TESTCASES.iter())),
         "libc-static" => (Box::new(LIBC_STATIC_TESTCASES.iter())),

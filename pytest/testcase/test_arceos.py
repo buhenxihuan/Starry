@@ -34,7 +34,7 @@ def step_setup01():  # 步骤函数命名不能以test_开头，否则将被识�
 
 @allure.step("测试步骤一：执行 代码扫描 测试")
 def step_01_clip(cmdRun, cmdApp):
-    _cmd = 'export PATH=$PATH:/home/runner/.cargo/bin:%s/riscv64-linux-musl-cross/bin && \
+    _cmd = 'export PATH=$PATH:/home/xh/qemu-7.0.0/build:/home/runner/.cargo/bin:%s/riscv64-linux-musl-cross/bin && \
             cd %s && make A=%s ARCH=%s clippy' %(commitConfig.get("工作目录"), \
                                                  commitConfig.get("工作目录"), \
                                                  cmdApp, \
