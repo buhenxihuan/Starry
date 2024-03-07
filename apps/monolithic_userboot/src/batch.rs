@@ -63,6 +63,65 @@ pub const SDCARD_TESTCASES: &[&str] = &[
     // "busybox sh ./cyclictest_testcode.sh",
 ];
 
+pub const NETPERF_TESTCASES: &[&str] = &[
+    "busybox sh ./netperf_testcode.sh",
+];
+
+pub const IPERF_TESTCASES: &[&str] = &[
+    "busybox sh ./iperf_testcode.sh",
+];
+
+
+#[allow(dead_code)]
+pub const CYCLICTEST_TESTCASES: &[&str] = &[
+    "busybox sh ./cyclictest_testcode.sh",
+];
+
+
+#[allow(dead_code)]
+pub const IOZONE_TESTCASES: &[&str] = &[
+    "busybox sh ./iozone_testcode.sh",
+];
+
+#[allow(dead_code)]
+pub const LMBENCH_TESTCASES: &[&str] = &[
+    "busybox sh lmbench_testcode.sh",
+];
+
+#[allow(dead_code)]
+pub const UNIXBENCH_TESTCASES: &[&str] = &[
+    "busybox sh ./unixbench_testcode.sh",
+];
+
+#[allow(dead_code)]
+pub const ALL_TESTCASES: &[&str] = &[
+    "busybox sh ./test_all.sh",
+];
+
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
+    "busybox sh ./run-dynamic.sh",
+];
+
+#[allow(dead_code)]
+/// libc静态测例
+pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+    "busybox sh ./run-static.sh",
+];
+
+#[allow(dead_code)]
+const BUSYBOX_TESTCASES: &[&str] = &[
+    "busybox sh busybox_testcode.sh",
+];
+
+
+#[allow(dead_code)]
+pub const LUA_TESTCASES: &[&str] = &[
+    "busybox sh lua_testcode.sh",
+];
+
+
+
 #[allow(unused)]
 /// 分割命令行参数
 fn get_args(command_line: &[u8]) -> Vec<String> {
@@ -101,7 +160,25 @@ fn get_args(command_line: &[u8]) -> Vec<String> {
 
 #[allow(unused)]
 pub fn run_batch_testcases(envs: &Vec<String>) {
-    let mut test_iter = Box::new(SDCARD_TESTCASES.iter());
+    let tc = option_env!("AX_TC").unwrap_or("test");
+    let (mut test_iter) = match tc {
+        "busybox" => (Box::new(BUSYBOX_TESTCASES.iter())),
+        "libc-static" => (Box::new(LIBC_STATIC_TESTCASES.iter())),
+        "libc-dynamic" => (Box::new(LIBC_DYNAMIC_TESTCASES.iter())),
+        "lua" => (Box::new(LUA_TESTCASES.iter())),
+        "netperf" => (Box::new(NETPERF_TESTCASES.iter())),
+        "iperf" => (Box::new(IPERF_TESTCASES.iter())),
+        "sdcard" => (Box::new(SDCARD_TESTCASES.iter())),
+        "cyclictest" => (Box::new(CYCLICTEST_TESTCASES.iter())),
+        "iozone" => (Box::new(IOZONE_TESTCASES.iter())),
+        "lmbench" => (Box::new(LMBENCH_TESTCASES.iter())),
+        "unixbench" => (Box::new(UNIXBENCH_TESTCASES.iter())),
+        "all" => (Box::new(ALL_TESTCASES.iter())),
+        _ => {
+            panic!("unknown test case: {}", tc);
+        }
+    };
+    // let mut test_iter = Box::new(SDCARD_TESTCASES.iter());
     for testcase in test_iter {
         let args = get_args(testcase.as_bytes());
         let user_process = syscall_entry::Process::init(args, envs).unwrap();

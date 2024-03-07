@@ -126,7 +126,8 @@ export AX_LOG=$(LOG)
 export AX_TARGET=$(TARGET)
 export AX_IP=$(IP)
 export AX_GW=$(GW)
-# export AX_TC=$(TC)
+export AX_TC=$(TC)
+ $(info $(AX_TC))
 
 # Binutils
 CROSS_COMPILE ?= $(ARCH)-linux-musl-
@@ -159,8 +160,8 @@ else ifeq ($(PLATFORM_NAME), aarch64-bsta1000b)
   include scripts/make/bsta1000b-fada.mk
 endif
 
-make_testcase:
-  $(shell sed 's/TESTCASE/"$(TC)"/' apps/oscomp/src/main_template.rs > apps/oscomp/src/main.rs)
+# make_testcase:
+#   $(shell sed 's/TESTCASE/"$(TC)"/' apps/oscomp/src/main_template.rs > apps/oscomp/src/main.rs)
 
 make_bin: 
   ifeq ($(STRUCT), Monolithic)
@@ -172,7 +173,7 @@ build: make_bin $(OUT_DIR) $(OUT_BIN)
 disasm:
 	$(OBJDUMP) $(OUT_ELF) | less
 
-run: make_testcase build justrun
+run: build justrun
 
 justrun:
 	$(call run_qemu)
