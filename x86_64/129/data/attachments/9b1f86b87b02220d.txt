@@ -1,0 +1,6 @@
+INFO     root:test_arceos.py:28 测试前置步骤一：初始化cmd库
+INFO     root:test_arceos.py:29 Setup for class with cmd
+INFO     root:test_arceos.py:44 test_type=clippy
+INFO     root:test_arceos.py:45 test_cmd=export PATH=$PATH:/home/xh/qemu-7.0.0/build:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin:/home/runner/work/Starry/Starry/x86_64-linux-musl-cross/bin:/home/runner/work/Starry/Starry/aarch64-linux-musl-cross/bin &&             cd /home/runner/work/Starry/Starry && make A=clippy ARCH=x86_64 clippy
+INFO     root:test_arceos.py:47 res=Makefile:68: *** Application path "clippy" is not valid.  Stop.
+INFO     root:test_arceos.py:51 用例结果信息--->测试失败，命令执行失败
