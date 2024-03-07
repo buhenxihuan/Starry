@@ -89,10 +89,10 @@ monoTcList = [
     "libc-static",
     "lua",
     "libc-dynamic",
-    "netperf",
     "cyclictest",
     "iozone",
     "lmbench",
+    # "netperf",
     # "iperf",
     # "unixbench",
     # "all"
