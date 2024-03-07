@@ -1,0 +1,154 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Mar 07 07:12:41 GMT 2024","Thu Mar 07 07:12:52 GMT 2024","11412","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""文件系统"": ""fat32"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""90007f91ccdf3ea37f15a920e7a7d121e1d4e27f"",
+""提交时间"": ""Thu Mar  7 15:07:42 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功
+"
+"passed","Thu Mar 07 07:12:52 GMT 2024","Thu Mar 07 07:13:04 GMT 2024","11583","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""文件系统"": ""fat32"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""90007f91ccdf3ea37f15a920e7a7d121e1d4e27f"",
+""提交时间"": ""Thu Mar  7 15:07:42 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功，成功用例条数：2，失败用例条数：0，错误信息：
+./cyclictest_testcode.sh: line 19: sleep: not found
+./cyclictest_testcode.sh: line 32: sleep: not found
+"
+"passed","Thu Mar 07 07:12:04 GMT 2024","Thu Mar 07 07:12:16 GMT 2024","12606","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""文件系统"": ""fat32"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""90007f91ccdf3ea37f15a920e7a7d121e1d4e27f"",
+""提交时间"": ""Thu Mar  7 15:07:42 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功，成功用例条数：9，失败用例条数：0，错误信息：
+
+"
+"failed","Thu Mar 07 07:10:17 GMT 2024","Thu Mar 07 07:11:12 GMT 2024","55304","testcase","test_arceos","","","","测试ArceOS 代码扫描 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""文件系统"": ""fat32"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""90007f91ccdf3ea37f15a920e7a7d121e1d4e27f"",
+""提交时间"": ""Thu Mar  7 15:07:42 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试失败，命令执行失败
+"
+"failed","Thu Mar 07 07:12:16 GMT 2024","Thu Mar 07 07:12:41 GMT 2024","24938","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""文件系统"": ""fat32"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""90007f91ccdf3ea37f15a920e7a7d121e1d4e27f"",
+""提交时间"": ""Thu Mar  7 15:07:42 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试失败，失败用例条数：1，成功用例条数：110，错误信息：
+
+"
+"passed","Thu Mar 07 07:13:04 GMT 2024","Thu Mar 07 07:19:37 GMT 2024","393281","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""文件系统"": ""fat32"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""90007f91ccdf3ea37f15a920e7a7d121e1d4e27f"",
+""提交时间"": ""Thu Mar  7 15:07:42 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功
+"
+"passed","Thu Mar 07 07:11:12 GMT 2024","Thu Mar 07 07:11:43 GMT 2024","30790","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""文件系统"": ""fat32"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""90007f91ccdf3ea37f15a920e7a7d121e1d4e27f"",
+""提交时间"": ""Thu Mar  7 15:07:42 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功，成功用例条数：55，失败用例条数：0，错误信息：
+sh: ""####: unknown operand
+sh: -c: unknown operand
+sh: -c: unknown operand
+sh: /aaa/bbb: unknown operand
+sh: /aaa/bbb: unknown operand
+sh: 1: unknown operand
+sh: ls: unknown operand
+abcnsh: ""abcn"": unknown operand
+sh: 10: unknown operand
+sh: 1: unknown operand
+sh: ""####: unknown operand
+sh: test.txt: unknown operand
+sh: ""hello: unknown operand
+sh: test.txt: unknown operand
+sh: -c: unknown operand
+sh: test.txt: unknown operand
+sh: test.txt: unknown operand
+sh: test.txt: unknown operand
+sh: -C: unknown operand
+sh: test.txt: unknown operand
+sh: ""ccccccc"": unknown operand
+sh: ""bbbbbbb"": unknown operand
+sh: ""aaaaaaa"": unknown operand
+sh: ""2222222"": unknown operand
+sh: ""1111111"": unknown operand
+sh: ""bbbbbbb"": unknown operand
+sh: test.txt: unknown operand
+sh: test.txt: unknown operand
+sh: test.txt: unknown operand
+sh: test.txt: unknown operand
+sh: -f: unknown operand
+sh: test.txt: unknown operand
+sh: test.txt: unknown operand
+sh: test_dir: unknown operand
+sh: test_dir: unknown operand
+sh: test: unknown operand
+sh: hello: unknown operand
+sh: busybox_cmd.txt: unknown operand
+sh: busybox_cmd.bak: unknown operand
+sh: -name: unknown operand
+"
+"failed","Thu Mar 07 07:11:43 GMT 2024","Thu Mar 07 07:12:04 GMT 2024","20566","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""文件系统"": ""fat32"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""90007f91ccdf3ea37f15a920e7a7d121e1d4e27f"",
+""提交时间"": ""Thu Mar  7 15:07:42 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试失败，失败用例条数：1，成功用例条数：108，错误信息：
+
+"
+"passed","Thu Mar 07 07:19:37 GMT 2024","Thu Mar 07 07:21:24 GMT 2024","106818","testcase","test_arceos","","","","测试ArceOS 宏内核 基本功能","码仓提交信息===>{
+""测试架构"": ""x86_64"",
+""文件系统"": ""fat32"",
+""提交者"": ""buhenxihuan"",
+""提交ID"": ""90007f91ccdf3ea37f15a920e7a7d121e1d4e27f"",
+""提交时间"": ""Thu Mar  7 15:07:42 UTC 2024"",
+""仓库名"": ""buhenxihuan/Starry"",
+""分支名"": ""x86_64"",
+""工作目录"": ""/home/runner/work/Starry/Starry""
+}
+用例结果信息===>测试成功
+"
