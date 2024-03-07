@@ -25,7 +25,7 @@ excelConfig = {
 }
 
 clippyCmdList = [
-    "apps/monolithic_userboot"
+    "clippy"
 ]
 
 
