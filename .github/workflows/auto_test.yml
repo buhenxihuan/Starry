@@ -47,7 +47,6 @@ jobs:
               sed -i "s#\"仓库名\": .*#\"仓库名\": \"$my_GITHUB_REPOSITORY\",#" config.py
               sed -i "s#\"分支名\": .*#\"分支名\": \"$my_GITHUB_REF_NAME\",#" config.py
               sed -i "s#\"工作目录\": .*#\"工作目录\": \"$my_GITHUB_WORKSPACE\"#" config.py
-              env
 
         env:
           my_ARCH: ${{ env.ARCH }}
@@ -112,6 +111,13 @@ jobs:
           sudo tar zxvf allure-commandline-2.24.1.tgz -C allure-com
           ls -lh
           sudo ln -s ${{github.workspace}}/allure-com/package/bin/allure /usr/bin/allure
+          wget https://musl.cc/aarch64-linux-musl-cross.tgz
+          wget https://musl.cc/riscv64-linux-musl-cross.tgz
+          wget https://musl.cc/x86_64-linux-musl-cross.tgz
+          tar zxf aarch64-linux-musl-cross.tgz
+          tar zxf riscv64-linux-musl-cross.tgz
+          tar zxf x86_64-linux-musl-cross.tgz
+
 
       
       - name: install pytest
