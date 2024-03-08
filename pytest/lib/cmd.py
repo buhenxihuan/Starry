@@ -95,13 +95,11 @@ class cmd:
     # 执行非交互命令
     def run_cmd(self, cmd):
         # p = None
-        # try:
-        p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        stdout, stderr = p.communicate(timeout=300)
-        # except Exception as e:
-            # if p:
-                # os.killpg(os.getppid(p.pid), signal.SIGKILL)
-            # return -1, "测试发生异常: %s" %str(e)
+        try:
+            p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            stdout, stderr = p.communicate(timeout=300)
+        except Exception as e:
+            return -1, "测试发生异常: %s" %str(e)
 
         result = ''
 
