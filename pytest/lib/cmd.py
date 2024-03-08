@@ -97,7 +97,7 @@ class cmd:
         p = None
         try:
             p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-            stdout, stderr = p.communicate(timeout=200)
+            stdout, stderr = p.communicate(timeout=300)
         except Exception as e:
             if p:
                 os.killpg(p.pid, signal.SIGKILL)
