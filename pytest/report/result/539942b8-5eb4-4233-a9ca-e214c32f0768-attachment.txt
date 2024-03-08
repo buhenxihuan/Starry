@@ -1,0 +1,8 @@
+[32mINFO    [0m root:test_arceos.py:28 测试前置步骤一：初始化cmd库
+[32mINFO    [0m root:test_arceos.py:29 Setup for class with cmd
+[32mINFO    [0m root:test_arceos.py:45 test_type=clippy
+[32mINFO    [0m root:test_arceos.py:46 test_cmd=export PATH=$PATH:/home/xh/qemu-7.0.0/build:/home/runner/.cargo/bin:/mnt/d/cicv/Starry/riscv64-linux-musl-cross/bin:/mnt/d/cicv/Starry/x86_64-linux-musl-cross/bin:/mnt/d/cicv/Starry/aarch64-linux-musl-cross/bin &&             cd /mnt/d/cicv/Starry && make A=apps/monolithic_userboot ARCH=x86_64 clippy
+[32mINFO    [0m root:test_arceos.py:48 res=[37mcargo clippy[0m [90m--all-features --workspace --exclude axlog --target x86_64-unknown-none [0m
+make: cargo: No such file or directory
+make: *** [Makefile:191: clippy] Error 127
+[32mINFO    [0m root:test_arceos.py:52 用例结果信息--->测试失败，命令执行失败
