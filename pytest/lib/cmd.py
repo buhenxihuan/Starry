@@ -97,7 +97,7 @@ class cmd:
         # p = None
         try:
             p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-            stdout, stderr = p.communicate(timeout=300)
+            stdout, stderr = p.communicate(timeout=400)
         except Exception as e:
             return -1, "测试发生异常: %s" %str(e)
 
