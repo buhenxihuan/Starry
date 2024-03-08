@@ -92,9 +92,9 @@ monoTcList = [
     "cyclictest",
     "iozone",
     "lmbench",
-    # "netperf",
-    # "iperf",
-    # "unixbench",
+    "netperf",
+    "iperf",
+    "unixbench",
     # "all"
 ]
 
