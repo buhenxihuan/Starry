@@ -1,0 +1,15 @@
+INFO     root:test_arceos.py:83 test_type=monokernel
+INFO     root:test_arceos.py:84 test_cmd=export PATH=$PATH:/home/xh/qemu-7.0.0/build:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin:/home/runner/work/Starry/Starry/aarch64-linux-musl-cross/bin:/home/runner/work/Starry/Starry/x86_64-linux-musl-cross/bin &&              cd /home/runner/work/Starry/Starry && ./build_img.sh riscv64 fat32 && sudo fuser -k 5555/tcp 5555/udp && make A=apps/monolithic_userboot ARCH=riscv64 TC=iozone APP_FEATURES=batch run
+INFO     root:test_arceos.py:86 res=30+0 records in
+30+0 records out
+125829120 bytes (126 MB, 120 MiB) copied, 0.120395 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+Copying riscv64 fat32 testsuits-riscv64-linux-musl/* to disk
+sdcard
+INFO     root:test_arceos.py:90 用例结果信息--->测试失败，命令执行失败，错误信息：
+30+0 records in
+30+0 records out
+125829120 bytes (126 MB, 120 MiB) copied, 0.120395 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+Copying riscv64 fat32 testsuits-riscv64-linux-musl/* to disk
+sdcard
