@@ -86,7 +86,6 @@ monoCmdList = [
 
 monoTcList = [
     "busybox",
-    "libc-static",
     "lua",
     "libc-dynamic",
     "cyclictest",
@@ -95,6 +94,7 @@ monoTcList = [
     "netperf",
     "iperf",
     "unixbench",
+    "libc-static",
     # "all"
 ]
 
