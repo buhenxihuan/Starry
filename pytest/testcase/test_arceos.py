@@ -72,7 +72,7 @@ def step_01_clip(cmdRun, cmdApp):
 @allure.step("测试步骤一：执行 宏内核 测试")
 def step_01_mono(cmdRun, cmdTc):
     _cmd = 'export PATH=$PATH:/home/xh/qemu-7.0.0/build:/home/runner/.cargo/bin:%s/riscv64-linux-musl-cross/bin:%s/aarch64-linux-musl-cross/bin:%s/x86_64-linux-musl-cross/bin && \
-             cd %s && ./build_img.sh %s %s && make A=apps/monolithic_userboot ARCH=%s TC=%s APP_FEATURES=batch run ; sudo fuser -k 5555/tcp 5555/udp' %(commitConfig.get("工作目录"), \
+             cd %s && ./build_img.sh %s %s && sudo fuser -k 5555/tcp 5555/udp && make A=apps/monolithic_userboot ARCH=%s TC=%s APP_FEATURES=batch run' %(commitConfig.get("工作目录"), \
                                                                                       commitConfig.get("工作目录"), \
                                                                                       commitConfig.get("工作目录"), \
                                                                                       commitConfig.get("工作目录"), \
