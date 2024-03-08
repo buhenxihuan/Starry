@@ -52,7 +52,7 @@ class cmd:
         p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         
         try:
-            stdout, stderr = communicate_with_timeout(p, timeout=60)
+            stdout, stderr = communicate_with_timeout(p, timeout=100)
             result = self.decode_output(stdout)
         except TimeoutExpired:
             result = "Command execution timed out"
