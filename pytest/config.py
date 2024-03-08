@@ -85,11 +85,11 @@ monoCmdList = [
 # ]
 
 monoTcList = [
+    "iozone",
     "busybox",
     "lua",
     "libc-dynamic",
     "cyclictest",
-    "iozone",
     "lmbench",
     "netperf",
     "iperf",
