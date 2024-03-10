@@ -1,0 +1,1 @@
+INFO     root:test_arceos.py:32 测试后置步骤：打印日志
