@@ -133,7 +133,7 @@ jobs:
 
       - name: deal parrale  
         if: always()
-        run: if [ "${{matrix.arch}}" = "riscv64" ]; then sleep 40; fi     
+        run: if [ "${{matrix.arch}}" = "riscv64" ]; then sleep 60; fi     
         
       - name: load allure history
         uses: actions/checkout@v3
