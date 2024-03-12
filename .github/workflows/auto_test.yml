@@ -27,7 +27,7 @@ jobs:
         # or ext4
         FS: fat32
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
 
       - name: Add current date into a variable
