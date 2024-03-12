@@ -74,7 +74,7 @@ jobs:
 
       - name: Cache QEMU
         id: cache-qemu
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: qemu-${{ env.qemu-version }}
           key: qemu-${{ env.qemu-version }}
