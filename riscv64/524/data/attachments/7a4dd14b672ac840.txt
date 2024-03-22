@@ -1,0 +1,426 @@
+INFO     root:test_arceos.py:83 test_type=monokernel
+INFO     root:test_arceos.py:84 test_cmd=export PATH=$PATH:/home/xh/qemu-7.0.0/build:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin:/home/runner/work/Starry/Starry/aarch64-linux-musl-cross/bin:/home/runner/work/Starry/Starry/x86_64-linux-musl-cross/bin &&              cd /home/runner/work/Starry/Starry && ./build_img.sh riscv64 fat32 && sudo fuser -k 5555/tcp 5555/udp; make A=apps/monolithic_userboot ARCH=riscv64 TC=libc-dynamic APP_FEATURES=batch run
+INFO     root:test_arceos.py:86 res=30+0 records in
+30+0 records out
+125829120 bytes (126 MB, 120 MiB) copied, 0.12156 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+Copying riscv64 fat32 testsuits-riscv64-linux-musl/* to disk
+sdcard
+    [92;1mBuilding[0m App: monolithic_userboot, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/Starry/Starry/target --release  --manifest-path apps/monolithic_userboot/Cargo.toml --features "syscall_entry/log-level-off syscall_entry/fp_simd syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net syscall_entry/schedule syscall_entry/fatfs batch"[0m
+   Compiling axdriver v0.1.0 (/home/runner/work/Starry/Starry/modules/axdriver)
+   Compiling axfs v0.1.0 (/home/runner/work/Starry/Starry/modules/axfs)
+   Compiling axnet v0.1.0 (/home/runner/work/Starry/Starry/modules/axnet)
+   Compiling axmem v0.1.0 (/home/runner/work/Starry/Starry/modules/axmem)
+   Compiling syscall_utils v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_utils)
+   Compiling axprocess v0.1.0 (/home/runner/work/Starry/Starry/modules/axprocess)
+   Compiling axruntime v0.1.0 (/home/runner/work/Starry/Starry/modules/axruntime)
+   Compiling axfeat v0.1.0 (/home/runner/work/Starry/Starry/api/axfeat)
+   Compiling syscall_fs v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_fs)
+   Compiling arceos_api v0.1.0 (/home/runner/work/Starry/Starry/api/arceos_api)
+   Compiling syscall_net v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_net)
+   Compiling syscall_task v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_task)
+   Compiling syscall_mem v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_mem)
+   Compiling syscall_entry v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_entry)
+   Compiling monolithic_userboot v0.1.0 (/home/runner/work/Starry/Starry/apps/monolithic_userboot)
+    Finished release [optimized] target(s) in 8.91s
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/monolithic_userboot/monolithic_userboot_riscv64-qemu-virt.elf --strip-all -O binary apps/monolithic_userboot/monolithic_userboot_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 2G -smp 1 -machine virt -bios default -kernel apps/monolithic_userboot/monolithic_userboot_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = off
+
+========== START entry-dynamic.exe argv ==========
+Pass!
+========== END entry-dynamic.exe argv ==========
+========== START entry-dynamic.exe basename ==========
+Pass!
+========== END entry-dynamic.exe basename ==========
+========== START entry-dynamic.exe clocale_mbfuncs ==========
+Pass!
+========== END entry-dynamic.exe clocale_mbfuncs ==========
+========== START entry-dynamic.exe clock_gettime ==========
+Pass!
+========== END entry-dynamic.exe clock_gettime ==========
+========== START entry-dynamic.exe crypt ==========
+Pass!
+========== END entry-dynamic.exe crypt ==========
+========== START entry-dynamic.exe dirname ==========
+Pass!
+========== END entry-dynamic.exe dirname ==========
+========== START entry-dynamic.exe dlopen ==========
+Pass!
+========== END entry-dynamic.exe dlopen ==========
+========== START entry-dynamic.exe env ==========
+Pass!
+========== END entry-dynamic.exe env ==========
+========== START entry-dynamic.exe fdopen ==========
+Pass!
+========== END entry-dynamic.exe fdopen ==========
+========== START entry-dynamic.exe fnmatch ==========
+Pass!
+========== END entry-dynamic.exe fnmatch ==========
+========== START entry-dynamic.exe fscanf ==========
+Pass!
+========== END entry-dynamic.exe fscanf ==========
+========== START entry-dynamic.exe fwscanf ==========
+Pass!
+========== END entry-dynamic.exe fwscanf ==========
+========== START entry-dynamic.exe iconv_open ==========
+Pass!
+========== END entry-dynamic.exe iconv_open ==========
+========== START entry-dynamic.exe inet_pton ==========
+Pass!
+========== END entry-dynamic.exe inet_pton ==========
+========== START entry-dynamic.exe mbc ==========
+Pass!
+========== END entry-dynamic.exe mbc ==========
+========== START entry-dynamic.exe memstream ==========
+Pass!
+========== END entry-dynamic.exe memstream ==========
+========== START entry-dynamic.exe pthread_cancel_points ==========
+Pass!
+========== END entry-dynamic.exe pthread_cancel_points ==========
+========== START entry-dynamic.exe pthread_cancel ==========
+Pass!
+========== END entry-dynamic.exe pthread_cancel ==========
+========== START entry-dynamic.exe pthread_cond ==========
+Pass!
+========== END entry-dynamic.exe pthread_cond ==========
+========== START entry-dynamic.exe pthread_tsd ==========
+Pass!
+========== END entry-dynamic.exe pthread_tsd ==========
+========== START entry-dynamic.exe qsort ==========
+Pass!
+========== END entry-dynamic.exe qsort ==========
+========== START entry-dynamic.exe random ==========
+Pass!
+========== END entry-dynamic.exe random ==========
+========== START entry-dynamic.exe search_hsearch ==========
+Pass!
+========== END entry-dynamic.exe search_hsearch ==========
+========== START entry-dynamic.exe search_insque ==========
+Pass!
+========== END entry-dynamic.exe search_insque ==========
+========== START entry-dynamic.exe search_lsearch ==========
+Pass!
+========== END entry-dynamic.exe search_lsearch ==========
+========== START entry-dynamic.exe search_tsearch ==========
+Pass!
+========== END entry-dynamic.exe search_tsearch ==========
+========== START entry-dynamic.exe sem_init ==========
+Pass!
+========== END entry-dynamic.exe sem_init ==========
+========== START entry-dynamic.exe setjmp ==========
+Pass!
+========== END entry-dynamic.exe setjmp ==========
+========== START entry-dynamic.exe snprintf ==========
+Pass!
+========== END entry-dynamic.exe snprintf ==========
+========== START entry-dynamic.exe socket ==========
+Pass!
+========== END entry-dynamic.exe socket ==========
+========== START entry-dynamic.exe sscanf ==========
+Pass!
+========== END entry-dynamic.exe sscanf ==========
+========== START entry-dynamic.exe sscanf_long ==========
+Pass!
+========== END entry-dynamic.exe sscanf_long ==========
+========== START entry-dynamic.exe stat ==========
+Pass!
+========== END entry-dynamic.exe stat ==========
+========== START entry-dynamic.exe strftime ==========
+Pass!
+========== END entry-dynamic.exe strftime ==========
+========== START entry-dynamic.exe string ==========
+Pass!
+========== END entry-dynamic.exe string ==========
+========== START entry-dynamic.exe string_memcpy ==========
+Pass!
+========== END entry-dynamic.exe string_memcpy ==========
+========== START entry-dynamic.exe string_memmem ==========
+Pass!
+========== END entry-dynamic.exe string_memmem ==========
+========== START entry-dynamic.exe string_memset ==========
+Pass!
+========== END entry-dynamic.exe string_memset ==========
+========== START entry-dynamic.exe string_strchr ==========
+Pass!
+========== END entry-dynamic.exe string_strchr ==========
+========== START entry-dynamic.exe string_strcspn ==========
+Pass!
+========== END entry-dynamic.exe string_strcspn ==========
+========== START entry-dynamic.exe string_strstr ==========
+Pass!
+========== END entry-dynamic.exe string_strstr ==========
+========== START entry-dynamic.exe strptime ==========
+Pass!
+========== END entry-dynamic.exe strptime ==========
+========== START entry-dynamic.exe strtod ==========
+Pass!
+========== END entry-dynamic.exe strtod ==========
+========== START entry-dynamic.exe strtod_simple ==========
+Pass!
+========== END entry-dynamic.exe strtod_simple ==========
+========== START entry-dynamic.exe strtof ==========
+Pass!
+========== END entry-dynamic.exe strtof ==========
+========== START entry-dynamic.exe strtol ==========
+Pass!
+========== END entry-dynamic.exe strtol ==========
+========== START entry-dynamic.exe strtold ==========
+Pass!
+========== END entry-dynamic.exe strtold ==========
+========== START entry-dynamic.exe swprintf ==========
+Pass!
+========== END entry-dynamic.exe swprintf ==========
+========== START entry-dynamic.exe tgmath ==========
+Pass!
+========== END entry-dynamic.exe tgmath ==========
+========== START entry-dynamic.exe time ==========
+Pass!
+========== END entry-dynamic.exe time ==========
+========== START entry-dynamic.exe tls_init ==========
+Pass!
+========== END entry-dynamic.exe tls_init ==========
+========== START entry-dynamic.exe tls_local_exec ==========
+Pass!
+========== END entry-dynamic.exe tls_local_exec ==========
+========== START entry-dynamic.exe udiv ==========
+Pass!
+========== END entry-dynamic.exe udiv ==========
+========== START entry-dynamic.exe ungetc ==========
+Pass!
+========== END entry-dynamic.exe ungetc ==========
+========== START entry-dynamic.exe utime ==========
+Pass!
+========== END entry-dynamic.exe utime ==========
+========== START entry-dynamic.exe wcsstr ==========
+Pass!
+========== END entry-dynamic.exe wcsstr ==========
+========== START entry-dynamic.exe wcstol ==========
+Pass!
+========== END entry-dynamic.exe wcstol ==========
+========== START entry-dynamic.exe daemon_failure ==========
+Pass!
+========== END entry-dynamic.exe daemon_failure ==========
+========== START entry-dynamic.exe dn_expand_empty ==========
+Pass!
+========== END entry-dynamic.exe dn_expand_empty ==========
+========== START entry-dynamic.exe dn_expand_ptr_0 ==========
+Pass!
+========== END entry-dynamic.exe dn_expand_ptr_0 ==========
+========== START entry-dynamic.exe fflush_exit ==========
+Pass!
+========== END entry-dynamic.exe fflush_exit ==========
+========== START entry-dynamic.exe fgets_eof ==========
+Pass!
+========== END entry-dynamic.exe fgets_eof ==========
+========== START entry-dynamic.exe fgetwc_buffering ==========
+Pass!
+========== END entry-dynamic.exe fgetwc_buffering ==========
+========== START entry-dynamic.exe fpclassify_invalid_ld80 ==========
+Pass!
+========== END entry-dynamic.exe fpclassify_invalid_ld80 ==========
+========== START entry-dynamic.exe ftello_unflushed_append ==========
+Pass!
+========== END entry-dynamic.exe ftello_unflushed_append ==========
+========== START entry-dynamic.exe getpwnam_r_crash ==========
+Pass!
+========== END entry-dynamic.exe getpwnam_r_crash ==========
+========== START entry-dynamic.exe getpwnam_r_errno ==========
+Pass!
+========== END entry-dynamic.exe getpwnam_r_errno ==========
+========== START entry-dynamic.exe iconv_roundtrips ==========
+Pass!
+========== END entry-dynamic.exe iconv_roundtrips ==========
+========== START entry-dynamic.exe inet_ntop_v4mapped ==========
+Pass!
+========== END entry-dynamic.exe inet_ntop_v4mapped ==========
+========== START entry-dynamic.exe inet_pton_empty_last_field ==========
+Pass!
+========== END entry-dynamic.exe inet_pton_empty_last_field ==========
+========== START entry-dynamic.exe iswspace_null ==========
+Pass!
+========== END entry-dynamic.exe iswspace_null ==========
+========== START entry-dynamic.exe lrand48_signextend ==========
+Pass!
+========== END entry-dynamic.exe lrand48_signextend ==========
+========== START entry-dynamic.exe lseek_large ==========
+Pass!
+========== END entry-dynamic.exe lseek_large ==========
+========== START entry-dynamic.exe malloc_0 ==========
+Pass!
+========== END entry-dynamic.exe malloc_0 ==========
+========== START entry-dynamic.exe mbsrtowcs_overflow ==========
+Pass!
+========== END entry-dynamic.exe mbsrtowcs_overflow ==========
+========== START entry-dynamic.exe memmem_oob_read ==========
+Pass!
+========== END entry-dynamic.exe memmem_oob_read ==========
+========== START entry-dynamic.exe memmem_oob ==========
+Pass!
+========== END entry-dynamic.exe memmem_oob ==========
+========== START entry-dynamic.exe mkdtemp_failure ==========
+Pass!
+========== END entry-dynamic.exe mkdtemp_failure ==========
+========== START entry-dynamic.exe mkstemp_failure ==========
+Pass!
+========== END entry-dynamic.exe mkstemp_failure ==========
+========== START entry-dynamic.exe printf_1e9_oob ==========
+Pass!
+========== END entry-dynamic.exe printf_1e9_oob ==========
+========== START entry-dynamic.exe printf_fmt_g_round ==========
+Pass!
+========== END entry-dynamic.exe printf_fmt_g_round ==========
+========== START entry-dynamic.exe printf_fmt_g_zeros ==========
+Pass!
+========== END entry-dynamic.exe printf_fmt_g_zeros ==========
+========== START entry-dynamic.exe printf_fmt_n ==========
+Pass!
+========== END entry-dynamic.exe printf_fmt_n ==========
+========== START entry-dynamic.exe pthread_robust_detach ==========
+Pass!
+========== END entry-dynamic.exe pthread_robust_detach ==========
+========== START entry-dynamic.exe pthread_cond_smasher ==========
+Pass!
+========== END entry-dynamic.exe pthread_cond_smasher ==========
+========== START entry-dynamic.exe pthread_condattr_setclock ==========
+Pass!
+========== END entry-dynamic.exe pthread_condattr_setclock ==========
+========== START entry-dynamic.exe pthread_exit_cancel ==========
+Pass!
+========== END entry-dynamic.exe pthread_exit_cancel ==========
+========== START entry-dynamic.exe pthread_once_deadlock ==========
+Pass!
+========== END entry-dynamic.exe pthread_once_deadlock ==========
+========== START entry-dynamic.exe pthread_rwlock_ebusy ==========
+Pass!
+========== END entry-dynamic.exe pthread_rwlock_ebusy ==========
+========== START entry-dynamic.exe putenv_doublefree ==========
+Pass!
+========== END entry-dynamic.exe putenv_doublefree ==========
+========== START entry-dynamic.exe regex_backref_0 ==========
+Pass!
+========== END entry-dynamic.exe regex_backref_0 ==========
+========== START entry-dynamic.exe regex_bracket_icase ==========
+Pass!
+========== END entry-dynamic.exe regex_bracket_icase ==========
+========== START entry-dynamic.exe regex_ere_backref ==========
+Pass!
+========== END entry-dynamic.exe regex_ere_backref ==========
+========== START entry-dynamic.exe regex_escaped_high_byte ==========
+Pass!
+========== END entry-dynamic.exe regex_escaped_high_byte ==========
+========== START entry-dynamic.exe regex_negated_range ==========
+Pass!
+========== END entry-dynamic.exe regex_negated_range ==========
+========== START entry-dynamic.exe regexec_nosub ==========
+Pass!
+========== END entry-dynamic.exe regexec_nosub ==========
+========== START entry-dynamic.exe rewind_clear_error ==========
+Pass!
+========== END entry-dynamic.exe rewind_clear_error ==========
+========== START entry-dynamic.exe rlimit_open_files ==========
+Pass!
+========== END entry-dynamic.exe rlimit_open_files ==========
+========== START entry-dynamic.exe scanf_bytes_consumed ==========
+Pass!
+========== END entry-dynamic.exe scanf_bytes_consumed ==========
+========== START entry-dynamic.exe scanf_match_literal_eof ==========
+Pass!
+========== END entry-dynamic.exe scanf_match_literal_eof ==========
+========== START entry-dynamic.exe scanf_nullbyte_char ==========
+Pass!
+========== END entry-dynamic.exe scanf_nullbyte_char ==========
+========== START entry-dynamic.exe setvbuf_unget ==========
+Pass!
+========== END entry-dynamic.exe setvbuf_unget ==========
+========== START entry-dynamic.exe sigprocmask_internal ==========
+Pass!
+========== END entry-dynamic.exe sigprocmask_internal ==========
+========== START entry-dynamic.exe sscanf_eof ==========
+Pass!
+========== END entry-dynamic.exe sscanf_eof ==========
+========== START entry-dynamic.exe statvfs ==========
+Pass!
+========== END entry-dynamic.exe statvfs ==========
+========== START entry-dynamic.exe strverscmp ==========
+Pass!
+========== END entry-dynamic.exe strverscmp ==========
+========== START entry-dynamic.exe syscall_sign_extend ==========
+Pass!
+========== END entry-dynamic.exe syscall_sign_extend ==========
+========== START entry-dynamic.exe tls_get_new_dtv ==========
+Pass!
+========== END entry-dynamic.exe tls_get_new_dtv ==========
+========== START entry-dynamic.exe uselocale_0 ==========
+Pass!
+========== END entry-dynamic.exe uselocale_0 ==========
+========== START entry-dynamic.exe wcsncpy_read_overflow ==========
+Pass!
+========== END entry-dynamic.exe wcsncpy_read_overflow ==========
+========== START entry-dynamic.exe wcsstr_false_negative ==========
+Pass!
+========== END entry-dynamic.exe wcsstr_false_negative ==========
+System halted with exit code 0
+INFO     root:test_arceos.py:90 用例结果信息--->测试成功，成功用例条数：111，失败用例条数：0，错误信息：
