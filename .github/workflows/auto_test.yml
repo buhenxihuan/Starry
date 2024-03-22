@@ -5,7 +5,7 @@ on:
   pull_request:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 */4 * * *"
   
 
 env:
@@ -133,7 +133,7 @@ jobs:
 
       - name: deal parrale  
         if: always()
-        run: if [ "${{matrix.arch}}" = "riscv64" ]; then sleep 60; fi     
+        run: if [ "${{matrix.arch}}" = "riscv64" ]; then sleep 240; fi     
         
       - name: load allure history
         uses: actions/checkout@v3
