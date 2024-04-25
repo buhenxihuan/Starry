@@ -1,0 +1,723 @@
+INFO     root:test_arceos.py:28 测试前置步骤一：初始化cmd库
+INFO     root:test_arceos.py:29 Setup for class with cmd
+INFO     root:test_arceos.py:45 test_type=clippy
+INFO     root:test_arceos.py:46 test_cmd=export PATH=$PATH:/home/xh/qemu-7.0.0/build:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin:/home/runner/work/Starry/Starry/x86_64-linux-musl-cross/bin:/home/runner/work/Starry/Starry/aarch64-linux-musl-cross/bin &&             cd /home/runner/work/Starry/Starry && make A=apps/monolithic_userboot ARCH=riscv64 clippy
+INFO     root:test_arceos.py:48 res=[37mcargo clippy[0m [90m--all-features --workspace --exclude axlog --target riscv64gc-unknown-none-elf [0m
+info: syncing channel updates for 'nightly-2023-11-30-x86_64-unknown-linux-gnu'
+info: latest update on 2023-11-30, rust version 1.76.0-nightly (b10cfcd65 2023-11-29)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'llvm-tools'
+info: downloading component 'rust-src'
+info: downloading component 'rust-std' for 'aarch64-unknown-none-softfloat'
+info: downloading component 'rust-std' for 'riscv64gc-unknown-none-elf'
+info: downloading component 'rust-std'
+info: downloading component 'rust-std' for 'x86_64-unknown-none'
+info: downloading component 'rustc'
+info: downloading component 'rustfmt'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'llvm-tools'
+info: installing component 'rust-src'
+info: installing component 'rust-std' for 'aarch64-unknown-none-softfloat'
+info: installing component 'rust-std' for 'riscv64gc-unknown-none-elf'
+info: installing component 'rust-std'
+info: installing component 'rust-std' for 'x86_64-unknown-none'
+info: installing component 'rustc'
+info: installing component 'rustfmt'
+    Updating git repository `https://github.com/c0per/smoltcp`
+    Updating git repository `https://github.com/rcore-os/bitmap-allocator.git`
+    Updating crates.io index
+    Updating git repository `https://github.com/lhw2002426/bcm2835-sdhci.git`
+    Updating git repository `https://github.com/KuangjuX/ixgbe-driver.git`
+    Updating git repository `https://github.com/rcore-os/virtio-drivers.git`
+    Updating git repository `https://github.com/mexus/numeric-enum-macro`
+    Updating git repository `https://github.com/rafalh/rust-fatfs`
+    Updating git repository `https://github.com/elliott10/lwext4_rust.git`
+    Updating git submodule `https://github.com/gkostka/lwext4.git`
+ Downloading crates ...
+  Downloaded zerocopy v0.7.26
+  Downloaded zerocopy-derive v0.7.26
+  Downloaded x86 v0.52.0
+  Downloaded lazycell v1.3.0
+  Downloaded lazy_static v1.4.0
+  Downloaded indexmap v2.0.0
+  Downloaded rustc-hash v1.1.0
+  Downloaded serde v1.0.185
+  Downloaded x2apic v0.4.2
+  Downloaded unicode-width v0.1.10
+  Downloaded syn v2.0.39
+  Downloaded regex-syntax v0.7.4
+  Downloaded embedded-graphics v0.8.1
+  Downloaded sbi-rt v0.0.2
+  Downloaded core_detect v1.0.0
+  Downloaded regex-automata v0.3.6
+  Downloaded libc v0.2.147
+  Downloaded bit v0.1.1
+  Downloaded svgbobdoc v0.3.0
+  Downloaded serde_derive v1.0.185
+  Downloaded rustversion v1.0.14
+  Downloaded riscv v0.10.1
+  Downloaded regex v1.9.3
+  Downloaded raw-cpuid v11.0.1
+  Downloaded raw-cpuid v10.7.0
+  Downloaded prettyplease v0.2.12
+  Downloaded micromath v2.0.0
+  Downloaded winnow v0.5.14
+  Downloaded which v4.4.0
+  Downloaded volatile v0.4.6
+  Downloaded volatile v0.3.0
+  Downloaded volatile v0.2.7
+  Downloaded void v1.0.2
+  Downloaded version_check v0.9.4
+  Downloaded unicode-ident v1.0.11
+  Downloaded toml_edit v0.19.14
+  Downloaded toml_datetime v0.6.3
+  Downloaded tock-registers v0.8.1
+  Downloaded thiserror-impl v1.0.47
+  Downloaded thiserror v1.0.47
+  Downloaded syn v1.0.109
+  Downloaded static_assertions v1.1.0
+  Downloaded stable_deref_trait v1.2.0
+  Downloaded spin v0.9.8
+  Downloaded spin v0.5.2
+  Downloaded shlex v1.1.0
+  Downloaded semver v1.0.18
+  Downloaded rand v0.8.5
+  Downloaded proc-macro2 v1.0.69
+  Downloaded proc-macro-error-attr v1.0.4
+  Downloaded proc-macro-error v1.0.4
+  Downloaded paste v1.0.14
+  Downloaded num_enum_derive v0.5.11
+  Downloaded nb v0.1.3
+  Downloaded minimal-lexical v0.2.1
+  Downloaded log v0.4.19
+  Downloaded embedded-hal v0.2.7
+  Downloaded buddy_system_allocator v0.9.0
+  Downloaded bitflags v2.4.0
+  Downloaded scopeguard v1.2.0
+  Downloaded sbi-spec v0.0.4
+  Downloaded rustc_version v0.4.0
+  Downloaded rlsf v0.2.1
+  Downloaded rand_core v0.6.4
+  Downloaded rand_chacha v0.3.1
+  Downloaded quote v1.0.33
+  Downloaded ppv-lite86 v0.2.17
+  Downloaded peeking_take_while v0.1.2
+  Downloaded num_enum v0.5.11
+  Downloaded num-traits v0.2.16
+  Downloaded nom v7.1.3
+  Downloaded nb v1.1.0
+  Downloaded memchr v2.5.0
+  Downloaded managed v0.8.0
+  Downloaded lock_api v0.4.10
+  Downloaded libloading v0.7.4
+  Downloaded heapless v0.7.16
+  Downloaded hashbrown v0.14.0
+  Downloaded hash32 v0.2.1
+  Downloaded glob v0.3.1
+  Downloaded getrandom v0.2.10
+  Downloaded float-cmp v0.9.0
+  Downloaded equivalent v1.0.1
+  Downloaded embedded-graphics-core v0.4.0
+  Downloaded either v1.9.0
+  Downloaded defmt-parser v0.3.3
+  Downloaded defmt-macros v0.3.6
+  Downloaded defmt v0.3.5
+  Downloaded critical-section v1.1.2
+  Downloaded const-default v1.0.0
+  Downloaded clang-sys v1.6.1
+  Downloaded cfg-if v1.0.0
+  Downloaded cexpr v0.6.0
+  Downloaded byteorder v1.4.3
+  Downloaded bitmaps v3.2.0
+  Downloaded bitflags v1.3.2
+  Downloaded bit_field v0.10.2
+  Downloaded bindgen v0.66.1
+  Downloaded base64 v0.13.1
+  Downloaded aho-corasick v1.0.4
+  Downloaded az v1.2.1
+  Downloaded aarch64-cpu v9.3.1
+  Downloaded zero v0.1.3
+  Downloaded xmas-elf v0.9.0
+  Downloaded x86_64 v0.14.10
+  Downloaded autocfg v1.1.0
+   Compiling proc-macro2 v1.0.69
+   Compiling unicode-ident v1.0.11
+    Checking log v0.4.19
+   Compiling autocfg v1.1.0
+    Checking cfg-if v1.0.0
+    Checking tock-registers v0.8.1
+    Checking bitflags v2.4.0
+   Compiling hashbrown v0.14.0
+   Compiling serde v1.0.185
+   Compiling axerrno v0.1.0 (/home/runner/work/Starry/Starry/crates/axerrno)
+   Compiling equivalent v1.0.1
+   Compiling syn v1.0.109
+   Compiling indexmap v2.0.0
+   Compiling quote v1.0.33
+   Compiling toml_datetime v0.6.3
+   Compiling syn v2.0.39
+   Compiling winnow v0.5.14
+   Compiling lock_api v0.4.10
+    Checking bit_field v0.10.2
+    Checking byteorder v1.4.3
+   Compiling toml_edit v0.19.14
+    Checking aarch64-cpu v9.3.1
+   Compiling semver v1.0.18
+    Checking scopeguard v1.2.0
+   Compiling memchr v2.5.0
+   Compiling glob v0.3.1
+   Compiling libc v0.2.147
+   Compiling clang-sys v1.6.1
+    Checking spin v0.9.8
+   Compiling unicode-width v0.1.10
+    Checking memory_addr v0.1.0 (/home/runner/work/Starry/Starry/crates/memory_addr)
+   Compiling prettyplease v0.2.12
+   Compiling base64 v0.13.1
+   Compiling axconfig v0.1.0 (/home/runner/work/Starry/Starry/modules/axconfig)
+   Compiling rustc_version v0.4.0
+   Compiling svgbobdoc v0.3.0
+    Checking const-default v1.0.0
+    Checking nb v1.1.0
+   Compiling minimal-lexical v0.2.1
+    Checking buddy_system_allocator v0.9.0
+   Compiling regex-syntax v0.7.4
+   Compiling nom v7.1.3
+   Compiling crate_interface v0.1.1 (/home/runner/work/Starry/Starry/crates/crate_interface)
+    Checking slab_allocator v0.3.1 (/home/runner/work/Starry/Starry/crates/slab_allocator)
+    Checking nb v0.1.3
+   Compiling libloading v0.7.4
+    Checking rlsf v0.2.1
+   Compiling heapless v0.7.16
+    Checking page_table_entry v0.1.0 (/home/runner/work/Starry/Starry/crates/page_table_entry)
+    Checking kernel_guard v0.1.0 (/home/runner/work/Starry/Starry/crates/kernel_guard)
+    Checking bitmap-allocator v0.1.0 (https://github.com/rcore-os/bitmap-allocator.git?rev=88e871a#88e871a5)
+    Checking spinlock v0.1.0 (/home/runner/work/Starry/Starry/crates/spinlock)
+    Checking axfs_vfs v0.1.0 (/home/runner/work/Starry/Starry/crates/axfs_vfs)
+   Compiling either v1.9.0
+   Compiling regex-automata v0.3.6
+    Checking void v1.0.2
+   Compiling bindgen v0.66.1
+   Compiling percpu v0.1.0 (/home/runner/work/Starry/Starry/crates/percpu)
+    Checking static_assertions v1.1.0
+    Checking spin v0.5.2
+   Compiling riscv v0.10.1
+    Checking lazy_static v1.4.0
+    Checking sbi-spec v0.0.4
+    Checking embedded-hal v0.2.7
+   Compiling which v4.4.0
+   Compiling cexpr v0.6.0
+    Checking allocator v0.1.0 (/home/runner/work/Starry/Starry/crates/allocator)
+   Compiling axhal v0.1.0 (/home/runner/work/Starry/Starry/modules/axhal)
+   Compiling regex v1.9.3
+   Compiling percpu_macros v0.1.0 (/home/runner/work/Starry/Starry/crates/percpu_macros)
+    Checking hash32 v0.2.1
+    Checking critical-section v1.1.2
+    Checking bitflags v1.3.2
+    Checking stable_deref_trait v1.2.0
+   Compiling peeking_take_while v0.1.2
+   Compiling smoltcp v0.10.0 (https://github.com/c0per/smoltcp?branch=starryos#a2e59192)
+   Compiling shlex v1.1.0
+   Compiling rustc-hash v1.1.0
+   Compiling lazycell v1.3.0
+    Checking axalloc v0.1.0 (/home/runner/work/Starry/Starry/modules/axalloc)
+    Checking sbi-rt v0.0.2
+    Checking axfs_ramfs v0.1.0 (/home/runner/work/Starry/Starry/crates/axfs_ramfs)
+    Checking axlog v0.1.0 (/home/runner/work/Starry/Starry/modules/axlog)
+    Checking page_table v0.1.0 (/home/runner/work/Starry/Starry/crates/page_table)
+   Compiling zerocopy-derive v0.7.26
+    Checking lazy_init v0.1.0 (/home/runner/work/Starry/Starry/crates/lazy_init)
+    Checking ratio v0.1.0 (/home/runner/work/Starry/Starry/crates/ratio)
+    Checking driver_common v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_common)
+    Checking handler_table v0.1.0 (/home/runner/work/Starry/Starry/crates/handler_table)
+    Checking managed v0.8.0
+    Checking zerocopy v0.7.26
+    Checking volatile v0.3.0
+    Checking core_detect v1.0.0
+    Checking volatile v0.2.7
+    Checking bcm2835-sdhci v0.1.0 (https://github.com/lhw2002426/bcm2835-sdhci.git?rev=e974f16#e974f168)
+    Checking virtio-drivers v0.7.1 (https://github.com/rcore-os/virtio-drivers.git?rev=4b60f5d#4b60f5d3)
+    Checking ixgbe-driver v0.1.0 (https://github.com/KuangjuX/ixgbe-driver.git?rev=8e5eb74#8e5eb741)
+    Checking linked_list v0.1.0 (/home/runner/work/Starry/Starry/crates/linked_list)
+    Checking numeric-enum-macro v0.2.0 (https://github.com/mexus/numeric-enum-macro#20aef288)
+    Checking axsignal v0.1.0 (/home/runner/work/Starry/Starry/modules/axsignal)
+    Checking scheduler v0.1.0 (/home/runner/work/Starry/Starry/crates/scheduler)
+    Checking driver_net v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_net)
+    Checking driver_block v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_block)
+    Checking driver_display v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_display)
+    Checking timer_list v0.1.0 (/home/runner/work/Starry/Starry/crates/timer_list)
+   Compiling axdriver v0.1.0 (/home/runner/work/Starry/Starry/modules/axdriver)
+    Checking axtask v0.1.0 (/home/runner/work/Starry/Starry/modules/axtask)
+    Checking driver_virtio v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_virtio)
+    Checking driver_pci v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_pci)
+    Checking axsync v0.1.0 (/home/runner/work/Starry/Starry/modules/axsync)
+    Checking rand_core v0.6.4
+    Checking rand v0.8.5
+    Checking axio v0.1.0 (/home/runner/work/Starry/Starry/crates/axio)
+    Checking fatfs v0.4.0 (https://github.com/rafalh/rust-fatfs?rev=a3a834e#a3a834ef)
+    Checking capability v0.1.0 (/home/runner/work/Starry/Starry/crates/capability)
+    Checking zero v0.1.3
+    Checking axfs_devfs v0.1.0 (/home/runner/work/Starry/Starry/crates/axfs_devfs)
+    Checking xmas-elf v0.9.0
+    Checking axnet v0.1.0 (/home/runner/work/Starry/Starry/modules/axnet)
+    Checking elf_parser v0.1.0 (/home/runner/work/Starry/Starry/crates/elf_parser)
+    Checking axdisplay v0.1.0 (/home/runner/work/Starry/Starry/modules/axdisplay)
+   Compiling num_enum_derive v0.5.11
+   Compiling num-traits v0.2.16
+   Compiling az v1.2.1
+    Checking bitmaps v3.2.0
+    Checking flatten_objects v0.1.0 (/home/runner/work/Starry/Starry/crates/flatten_objects)
+    Checking num_enum v0.5.11
+    Checking float-cmp v0.9.0
+    Checking micromath v2.0.0
+    Checking arm_pl011 v0.1.0 (/home/runner/work/Starry/Starry/crates/arm_pl011)
+    Checking arm_gic v0.1.0 (/home/runner/work/Starry/Starry/crates/arm_gic)
+    Checking dw_apb_uart v0.1.0 (/home/runner/work/Starry/Starry/crates/dw_apb_uart)
+    Checking embedded-graphics-core v0.4.0
+    Checking embedded-graphics v0.8.1
+   Compiling lwext4_rust v0.1.0 (https://github.com/elliott10/lwext4_rust.git?rev=562fbfce#562fbfce)
+   Compiling arceos_posix_api v0.1.0 (/home/runner/work/Starry/Starry/api/arceos_posix_api)
+   Compiling axlibc v0.1.0 (/home/runner/work/Starry/Starry/ulib/axlibc)
+    Checking tuple_for_each v0.1.0 (/home/runner/work/Starry/Starry/crates/tuple_for_each)
+error: failed to run custom build command for `lwext4_rust v0.1.0 (https://github.com/elliott10/lwext4_rust.git?rev=562fbfce#562fbfce)`
+
+Caused by:
+  process didn't exit successfully: `/home/runner/work/Starry/Starry/target/debug/build/lwext4_rust-5ee0b4352797af52/build-script-build` (exit status: 101)
+  --- stdout
+  Retrieve lwext4 source code
+  To patch lwext4 src
+  make[1]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4'
+  rm -R -f build_musl-generic
+  mkdir build_musl-generic
+  cd build_musl-generic && cmake -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DVERSION_MAJOR=1 -DVERSION_MINOR=0 -DVERSION_PATCH=0 -DVERSION=1.0.0-58bcf89 -DLWEXT4_BUILD_SHARED_LIB=OFF -DCMAKE_INSTALL_PREFIX=./install   -DCMAKE_TOOLCHAIN_FILE=../toolchain/musl-generic.cmake ..
+  -- The C compiler identification is GNU 11.2.1
+  -- Detecting C compiler ABI info
+  -- Detecting C compiler ABI info - done
+  -- Check for working C compiler: /home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin/riscv64-linux-musl-cc - skipped
+  -- Detecting C compile features
+  -- Detecting C compile features - done
+  -- Configuring done (0.7s)
+  -- Generating done (0.0s)
+  -- Build files have been written to: /root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic
+  cd build_musl-generic && make lwext4
+  make[2]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[3]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[4]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[5]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[5]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[5]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  [  4%] Building C object src/CMakeFiles/lwext4.dir/ext4.c.o
+  [  9%] Building C object src/CMakeFiles/lwext4.dir/ext4_balloc.c.o
+  [ 13%] Building C object src/CMakeFiles/lwext4.dir/ext4_bcache.c.o
+  [ 18%] Building C object src/CMakeFiles/lwext4.dir/ext4_bitmap.c.o
+  [ 22%] Building C object src/CMakeFiles/lwext4.dir/ext4_block_group.c.o
+  [ 27%] Building C object src/CMakeFiles/lwext4.dir/ext4_blockdev.c.o
+  [ 31%] Building C object src/CMakeFiles/lwext4.dir/ext4_crc32.c.o
+  [ 36%] Building C object src/CMakeFiles/lwext4.dir/ext4_debug.c.o
+  [ 40%] Building C object src/CMakeFiles/lwext4.dir/ext4_dir.c.o
+  [ 45%] Building C object src/CMakeFiles/lwext4.dir/ext4_dir_idx.c.o
+  [ 50%] Building C object src/CMakeFiles/lwext4.dir/ext4_extent.c.o
+  [ 54%] Building C object src/CMakeFiles/lwext4.dir/ext4_fs.c.o
+  [ 59%] Building C object src/CMakeFiles/lwext4.dir/ext4_hash.c.o
+  [ 63%] Building C object src/CMakeFiles/lwext4.dir/ext4_ialloc.c.o
+  [ 68%] Building C object src/CMakeFiles/lwext4.dir/ext4_inode.c.o
+  [ 72%] Building C object src/CMakeFiles/lwext4.dir/ext4_journal.c.o
+  [ 77%] Building C object src/CMakeFiles/lwext4.dir/ext4_mbr.c.o
+  [ 81%] Building C object src/CMakeFiles/lwext4.dir/ext4_mkfs.c.o
+  [ 86%] Building C object src/CMakeFiles/lwext4.dir/ext4_super.c.o
+  [ 90%] Building C object src/CMakeFiles/lwext4.dir/ext4_trans.c.o
+  [ 95%] Building C object src/CMakeFiles/lwext4.dir/ext4_xattr.c.o
+  [100%] Linking C static library liblwext4.a
+  make[5]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  [100%] Built target lwext4
+  make[4]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[3]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[2]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  cp build_musl-generic/src/liblwext4.a ./liblwext4-riscv64.a
+  make[1]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4'
+  cargo:rerun-if-env-changed=TARGET
+  cargo:rerun-if-env-changed=BINDGEN_EXTRA_CLANG_ARGS_riscv64gc-unknown-none-elf
+  cargo:rerun-if-env-changed=BINDGEN_EXTRA_CLANG_ARGS_riscv64gc_unknown_none_elf
+  cargo:rerun-if-env-changed=BINDGEN_EXTRA_CLANG_ARGS
+
+  --- stderr
+  CMake Warning (dev) at CMakeLists.txt:1 (project):
+    cmake_minimum_required() should be called prior to this top-level project()
+    call.  Please see the cmake-commands(7) manual for usage documentation of
+    both commands.
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+
+  CMake Deprecation Warning at CMakeLists.txt:2 (cmake_minimum_required):
+    Compatibility with CMake < 3.5 will be removed from a future version of
+    CMake.
+
+    Update the VERSION argument <min> value or use a ...<max> suffix to tell
+    CMake that the project does not need compatibility with older versions.
+
+
+  /usr/lib/llvm-14/lib/clang/14.0.0/include/inttypes.h:21:15: fatal error: 'inttypes.h' file not found
+  thread 'main' panicked at /root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/build.rs:88:10:
+  Unable to generate bindings: ClangDiagnostic("/usr/lib/llvm-14/lib/clang/14.0.0/include/inttypes.h:21:15: fatal error: 'inttypes.h' file not found\n")
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+make: *** [Makefile:191: clippy] Error 101
+INFO     root:test_arceos.py:52 用例结果信息--->测试失败，命令执行失败，错误信息：
+[37mcargo clippy[0m [90m--all-features --workspace --exclude axlog --target riscv64gc-unknown-none-elf [0m
+info: syncing channel updates for 'nightly-2023-11-30-x86_64-unknown-linux-gnu'
+info: latest update on 2023-11-30, rust version 1.76.0-nightly (b10cfcd65 2023-11-29)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'llvm-tools'
+info: downloading component 'rust-src'
+info: downloading component 'rust-std' for 'aarch64-unknown-none-softfloat'
+info: downloading component 'rust-std' for 'riscv64gc-unknown-none-elf'
+info: downloading component 'rust-std'
+info: downloading component 'rust-std' for 'x86_64-unknown-none'
+info: downloading component 'rustc'
+info: downloading component 'rustfmt'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'llvm-tools'
+info: installing component 'rust-src'
+info: installing component 'rust-std' for 'aarch64-unknown-none-softfloat'
+info: installing component 'rust-std' for 'riscv64gc-unknown-none-elf'
+info: installing component 'rust-std'
+info: installing component 'rust-std' for 'x86_64-unknown-none'
+info: installing component 'rustc'
+info: installing component 'rustfmt'
+    Updating git repository `https://github.com/c0per/smoltcp`
+    Updating git repository `https://github.com/rcore-os/bitmap-allocator.git`
+    Updating crates.io index
+    Updating git repository `https://github.com/lhw2002426/bcm2835-sdhci.git`
+    Updating git repository `https://github.com/KuangjuX/ixgbe-driver.git`
+    Updating git repository `https://github.com/rcore-os/virtio-drivers.git`
+    Updating git repository `https://github.com/mexus/numeric-enum-macro`
+    Updating git repository `https://github.com/rafalh/rust-fatfs`
+    Updating git repository `https://github.com/elliott10/lwext4_rust.git`
+    Updating git submodule `https://github.com/gkostka/lwext4.git`
+ Downloading crates ...
+  Downloaded zerocopy v0.7.26
+  Downloaded zerocopy-derive v0.7.26
+  Downloaded x86 v0.52.0
+  Downloaded lazycell v1.3.0
+  Downloaded lazy_static v1.4.0
+  Downloaded indexmap v2.0.0
+  Downloaded rustc-hash v1.1.0
+  Downloaded serde v1.0.185
+  Downloaded x2apic v0.4.2
+  Downloaded unicode-width v0.1.10
+  Downloaded syn v2.0.39
+  Downloaded regex-syntax v0.7.4
+  Downloaded embedded-graphics v0.8.1
+  Downloaded sbi-rt v0.0.2
+  Downloaded core_detect v1.0.0
+  Downloaded regex-automata v0.3.6
+  Downloaded libc v0.2.147
+  Downloaded bit v0.1.1
+  Downloaded svgbobdoc v0.3.0
+  Downloaded serde_derive v1.0.185
+  Downloaded rustversion v1.0.14
+  Downloaded riscv v0.10.1
+  Downloaded regex v1.9.3
+  Downloaded raw-cpuid v11.0.1
+  Downloaded raw-cpuid v10.7.0
+  Downloaded prettyplease v0.2.12
+  Downloaded micromath v2.0.0
+  Downloaded winnow v0.5.14
+  Downloaded which v4.4.0
+  Downloaded volatile v0.4.6
+  Downloaded volatile v0.3.0
+  Downloaded volatile v0.2.7
+  Downloaded void v1.0.2
+  Downloaded version_check v0.9.4
+  Downloaded unicode-ident v1.0.11
+  Downloaded toml_edit v0.19.14
+  Downloaded toml_datetime v0.6.3
+  Downloaded tock-registers v0.8.1
+  Downloaded thiserror-impl v1.0.47
+  Downloaded thiserror v1.0.47
+  Downloaded syn v1.0.109
+  Downloaded static_assertions v1.1.0
+  Downloaded stable_deref_trait v1.2.0
+  Downloaded spin v0.9.8
+  Downloaded spin v0.5.2
+  Downloaded shlex v1.1.0
+  Downloaded semver v1.0.18
+  Downloaded rand v0.8.5
+  Downloaded proc-macro2 v1.0.69
+  Downloaded proc-macro-error-attr v1.0.4
+  Downloaded proc-macro-error v1.0.4
+  Downloaded paste v1.0.14
+  Downloaded num_enum_derive v0.5.11
+  Downloaded nb v0.1.3
+  Downloaded minimal-lexical v0.2.1
+  Downloaded log v0.4.19
+  Downloaded embedded-hal v0.2.7
+  Downloaded buddy_system_allocator v0.9.0
+  Downloaded bitflags v2.4.0
+  Downloaded scopeguard v1.2.0
+  Downloaded sbi-spec v0.0.4
+  Downloaded rustc_version v0.4.0
+  Downloaded rlsf v0.2.1
+  Downloaded rand_core v0.6.4
+  Downloaded rand_chacha v0.3.1
+  Downloaded quote v1.0.33
+  Downloaded ppv-lite86 v0.2.17
+  Downloaded peeking_take_while v0.1.2
+  Downloaded num_enum v0.5.11
+  Downloaded num-traits v0.2.16
+  Downloaded nom v7.1.3
+  Downloaded nb v1.1.0
+  Downloaded memchr v2.5.0
+  Downloaded managed v0.8.0
+  Downloaded lock_api v0.4.10
+  Downloaded libloading v0.7.4
+  Downloaded heapless v0.7.16
+  Downloaded hashbrown v0.14.0
+  Downloaded hash32 v0.2.1
+  Downloaded glob v0.3.1
+  Downloaded getrandom v0.2.10
+  Downloaded float-cmp v0.9.0
+  Downloaded equivalent v1.0.1
+  Downloaded embedded-graphics-core v0.4.0
+  Downloaded either v1.9.0
+  Downloaded defmt-parser v0.3.3
+  Downloaded defmt-macros v0.3.6
+  Downloaded defmt v0.3.5
+  Downloaded critical-section v1.1.2
+  Downloaded const-default v1.0.0
+  Downloaded clang-sys v1.6.1
+  Downloaded cfg-if v1.0.0
+  Downloaded cexpr v0.6.0
+  Downloaded byteorder v1.4.3
+  Downloaded bitmaps v3.2.0
+  Downloaded bitflags v1.3.2
+  Downloaded bit_field v0.10.2
+  Downloaded bindgen v0.66.1
+  Downloaded base64 v0.13.1
+  Downloaded aho-corasick v1.0.4
+  Downloaded az v1.2.1
+  Downloaded aarch64-cpu v9.3.1
+  Downloaded zero v0.1.3
+  Downloaded xmas-elf v0.9.0
+  Downloaded x86_64 v0.14.10
+  Downloaded autocfg v1.1.0
+   Compiling proc-macro2 v1.0.69
+   Compiling unicode-ident v1.0.11
+    Checking log v0.4.19
+   Compiling autocfg v1.1.0
+    Checking cfg-if v1.0.0
+    Checking tock-registers v0.8.1
+    Checking bitflags v2.4.0
+   Compiling hashbrown v0.14.0
+   Compiling serde v1.0.185
+   Compiling axerrno v0.1.0 (/home/runner/work/Starry/Starry/crates/axerrno)
+   Compiling equivalent v1.0.1
+   Compiling syn v1.0.109
+   Compiling indexmap v2.0.0
+   Compiling quote v1.0.33
+   Compiling toml_datetime v0.6.3
+   Compiling syn v2.0.39
+   Compiling winnow v0.5.14
+   Compiling lock_api v0.4.10
+    Checking bit_field v0.10.2
+    Checking byteorder v1.4.3
+   Compiling toml_edit v0.19.14
+    Checking aarch64-cpu v9.3.1
+   Compiling semver v1.0.18
+    Checking scopeguard v1.2.0
+   Compiling memchr v2.5.0
+   Compiling glob v0.3.1
+   Compiling libc v0.2.147
+   Compiling clang-sys v1.6.1
+    Checking spin v0.9.8
+   Compiling unicode-width v0.1.10
+    Checking memory_addr v0.1.0 (/home/runner/work/Starry/Starry/crates/memory_addr)
+   Compiling prettyplease v0.2.12
+   Compiling base64 v0.13.1
+   Compiling axconfig v0.1.0 (/home/runner/work/Starry/Starry/modules/axconfig)
+   Compiling rustc_version v0.4.0
+   Compiling svgbobdoc v0.3.0
+    Checking const-default v1.0.0
+    Checking nb v1.1.0
+   Compiling minimal-lexical v0.2.1
+    Checking buddy_system_allocator v0.9.0
+   Compiling regex-syntax v0.7.4
+   Compiling nom v7.1.3
+   Compiling crate_interface v0.1.1 (/home/runner/work/Starry/Starry/crates/crate_interface)
+    Checking slab_allocator v0.3.1 (/home/runner/work/Starry/Starry/crates/slab_allocator)
+    Checking nb v0.1.3
+   Compiling libloading v0.7.4
+    Checking rlsf v0.2.1
+   Compiling heapless v0.7.16
+    Checking page_table_entry v0.1.0 (/home/runner/work/Starry/Starry/crates/page_table_entry)
+    Checking kernel_guard v0.1.0 (/home/runner/work/Starry/Starry/crates/kernel_guard)
+    Checking bitmap-allocator v0.1.0 (https://github.com/rcore-os/bitmap-allocator.git?rev=88e871a#88e871a5)
+    Checking spinlock v0.1.0 (/home/runner/work/Starry/Starry/crates/spinlock)
+    Checking axfs_vfs v0.1.0 (/home/runner/work/Starry/Starry/crates/axfs_vfs)
+   Compiling either v1.9.0
+   Compiling regex-automata v0.3.6
+    Checking void v1.0.2
+   Compiling bindgen v0.66.1
+   Compiling percpu v0.1.0 (/home/runner/work/Starry/Starry/crates/percpu)
+    Checking static_assertions v1.1.0
+    Checking spin v0.5.2
+   Compiling riscv v0.10.1
+    Checking lazy_static v1.4.0
+    Checking sbi-spec v0.0.4
+    Checking embedded-hal v0.2.7
+   Compiling which v4.4.0
+   Compiling cexpr v0.6.0
+    Checking allocator v0.1.0 (/home/runner/work/Starry/Starry/crates/allocator)
+   Compiling axhal v0.1.0 (/home/runner/work/Starry/Starry/modules/axhal)
+   Compiling regex v1.9.3
+   Compiling percpu_macros v0.1.0 (/home/runner/work/Starry/Starry/crates/percpu_macros)
+    Checking hash32 v0.2.1
+    Checking critical-section v1.1.2
+    Checking bitflags v1.3.2
+    Checking stable_deref_trait v1.2.0
+   Compiling peeking_take_while v0.1.2
+   Compiling smoltcp v0.10.0 (https://github.com/c0per/smoltcp?branch=starryos#a2e59192)
+   Compiling shlex v1.1.0
+   Compiling rustc-hash v1.1.0
+   Compiling lazycell v1.3.0
+    Checking axalloc v0.1.0 (/home/runner/work/Starry/Starry/modules/axalloc)
+    Checking sbi-rt v0.0.2
+    Checking axfs_ramfs v0.1.0 (/home/runner/work/Starry/Starry/crates/axfs_ramfs)
+    Checking axlog v0.1.0 (/home/runner/work/Starry/Starry/modules/axlog)
+    Checking page_table v0.1.0 (/home/runner/work/Starry/Starry/crates/page_table)
+   Compiling zerocopy-derive v0.7.26
+    Checking lazy_init v0.1.0 (/home/runner/work/Starry/Starry/crates/lazy_init)
+    Checking ratio v0.1.0 (/home/runner/work/Starry/Starry/crates/ratio)
+    Checking driver_common v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_common)
+    Checking handler_table v0.1.0 (/home/runner/work/Starry/Starry/crates/handler_table)
+    Checking managed v0.8.0
+    Checking zerocopy v0.7.26
+    Checking volatile v0.3.0
+    Checking core_detect v1.0.0
+    Checking volatile v0.2.7
+    Checking bcm2835-sdhci v0.1.0 (https://github.com/lhw2002426/bcm2835-sdhci.git?rev=e974f16#e974f168)
+    Checking virtio-drivers v0.7.1 (https://github.com/rcore-os/virtio-drivers.git?rev=4b60f5d#4b60f5d3)
+    Checking ixgbe-driver v0.1.0 (https://github.com/KuangjuX/ixgbe-driver.git?rev=8e5eb74#8e5eb741)
+    Checking linked_list v0.1.0 (/home/runner/work/Starry/Starry/crates/linked_list)
+    Checking numeric-enum-macro v0.2.0 (https://github.com/mexus/numeric-enum-macro#20aef288)
+    Checking axsignal v0.1.0 (/home/runner/work/Starry/Starry/modules/axsignal)
+    Checking scheduler v0.1.0 (/home/runner/work/Starry/Starry/crates/scheduler)
+    Checking driver_net v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_net)
+    Checking driver_block v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_block)
+    Checking driver_display v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_display)
+    Checking timer_list v0.1.0 (/home/runner/work/Starry/Starry/crates/timer_list)
+   Compiling axdriver v0.1.0 (/home/runner/work/Starry/Starry/modules/axdriver)
+    Checking axtask v0.1.0 (/home/runner/work/Starry/Starry/modules/axtask)
+    Checking driver_virtio v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_virtio)
+    Checking driver_pci v0.1.0 (/home/runner/work/Starry/Starry/crates/driver_pci)
+    Checking axsync v0.1.0 (/home/runner/work/Starry/Starry/modules/axsync)
+    Checking rand_core v0.6.4
+    Checking rand v0.8.5
+    Checking axio v0.1.0 (/home/runner/work/Starry/Starry/crates/axio)
+    Checking fatfs v0.4.0 (https://github.com/rafalh/rust-fatfs?rev=a3a834e#a3a834ef)
+    Checking capability v0.1.0 (/home/runner/work/Starry/Starry/crates/capability)
+    Checking zero v0.1.3
+    Checking axfs_devfs v0.1.0 (/home/runner/work/Starry/Starry/crates/axfs_devfs)
+    Checking xmas-elf v0.9.0
+    Checking axnet v0.1.0 (/home/runner/work/Starry/Starry/modules/axnet)
+    Checking elf_parser v0.1.0 (/home/runner/work/Starry/Starry/crates/elf_parser)
+    Checking axdisplay v0.1.0 (/home/runner/work/Starry/Starry/modules/axdisplay)
+   Compiling num_enum_derive v0.5.11
+   Compiling num-traits v0.2.16
+   Compiling az v1.2.1
+    Checking bitmaps v3.2.0
+    Checking flatten_objects v0.1.0 (/home/runner/work/Starry/Starry/crates/flatten_objects)
+    Checking num_enum v0.5.11
+    Checking float-cmp v0.9.0
+    Checking micromath v2.0.0
+    Checking arm_pl011 v0.1.0 (/home/runner/work/Starry/Starry/crates/arm_pl011)
+    Checking arm_gic v0.1.0 (/home/runner/work/Starry/Starry/crates/arm_gic)
+    Checking dw_apb_uart v0.1.0 (/home/runner/work/Starry/Starry/crates/dw_apb_uart)
+    Checking embedded-graphics-core v0.4.0
+    Checking embedded-graphics v0.8.1
+   Compiling lwext4_rust v0.1.0 (https://github.com/elliott10/lwext4_rust.git?rev=562fbfce#562fbfce)
+   Compiling arceos_posix_api v0.1.0 (/home/runner/work/Starry/Starry/api/arceos_posix_api)
+   Compiling axlibc v0.1.0 (/home/runner/work/Starry/Starry/ulib/axlibc)
+    Checking tuple_for_each v0.1.0 (/home/runner/work/Starry/Starry/crates/tuple_for_each)
+error: failed to run custom build command for `lwext4_rust v0.1.0 (https://github.com/elliott10/lwext4_rust.git?rev=562fbfce#562fbfce)`
+
+Caused by:
+  process didn't exit successfully: `/home/runner/work/Starry/Starry/target/debug/build/lwext4_rust-5ee0b4352797af52/build-script-build` (exit status: 101)
+  --- stdout
+  Retrieve lwext4 source code
+  To patch lwext4 src
+  make[1]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4'
+  rm -R -f build_musl-generic
+  mkdir build_musl-generic
+  cd build_musl-generic && cmake -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DVERSION_MAJOR=1 -DVERSION_MINOR=0 -DVERSION_PATCH=0 -DVERSION=1.0.0-58bcf89 -DLWEXT4_BUILD_SHARED_LIB=OFF -DCMAKE_INSTALL_PREFIX=./install   -DCMAKE_TOOLCHAIN_FILE=../toolchain/musl-generic.cmake ..
+  -- The C compiler identification is GNU 11.2.1
+  -- Detecting C compiler ABI info
+  -- Detecting C compiler ABI info - done
+  -- Check for working C compiler: /home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin/riscv64-linux-musl-cc - skipped
+  -- Detecting C compile features
+  -- Detecting C compile features - done
+  -- Configuring done (0.7s)
+  -- Generating done (0.0s)
+  -- Build files have been written to: /root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic
+  cd build_musl-generic && make lwext4
+  make[2]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[3]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[4]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[5]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[5]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[5]: Entering directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  [  4%] Building C object src/CMakeFiles/lwext4.dir/ext4.c.o
+  [  9%] Building C object src/CMakeFiles/lwext4.dir/ext4_balloc.c.o
+  [ 13%] Building C object src/CMakeFiles/lwext4.dir/ext4_bcache.c.o
+  [ 18%] Building C object src/CMakeFiles/lwext4.dir/ext4_bitmap.c.o
+  [ 22%] Building C object src/CMakeFiles/lwext4.dir/ext4_block_group.c.o
+  [ 27%] Building C object src/CMakeFiles/lwext4.dir/ext4_blockdev.c.o
+  [ 31%] Building C object src/CMakeFiles/lwext4.dir/ext4_crc32.c.o
+  [ 36%] Building C object src/CMakeFiles/lwext4.dir/ext4_debug.c.o
+  [ 40%] Building C object src/CMakeFiles/lwext4.dir/ext4_dir.c.o
+  [ 45%] Building C object src/CMakeFiles/lwext4.dir/ext4_dir_idx.c.o
+  [ 50%] Building C object src/CMakeFiles/lwext4.dir/ext4_extent.c.o
+  [ 54%] Building C object src/CMakeFiles/lwext4.dir/ext4_fs.c.o
+  [ 59%] Building C object src/CMakeFiles/lwext4.dir/ext4_hash.c.o
+  [ 63%] Building C object src/CMakeFiles/lwext4.dir/ext4_ialloc.c.o
+  [ 68%] Building C object src/CMakeFiles/lwext4.dir/ext4_inode.c.o
+  [ 72%] Building C object src/CMakeFiles/lwext4.dir/ext4_journal.c.o
+  [ 77%] Building C object src/CMakeFiles/lwext4.dir/ext4_mbr.c.o
+  [ 81%] Building C object src/CMakeFiles/lwext4.dir/ext4_mkfs.c.o
+  [ 86%] Building C object src/CMakeFiles/lwext4.dir/ext4_super.c.o
+  [ 90%] Building C object src/CMakeFiles/lwext4.dir/ext4_trans.c.o
+  [ 95%] Building C object src/CMakeFiles/lwext4.dir/ext4_xattr.c.o
+  [100%] Linking C static library liblwext4.a
+  make[5]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  [100%] Built target lwext4
+  make[4]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[3]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  make[2]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4/build_musl-generic'
+  cp build_musl-generic/src/liblwext4.a ./liblwext4-riscv64.a
+  make[1]: Leaving directory '/root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/c/lwext4'
+  cargo:rerun-if-env-changed=TARGET
+  cargo:rerun-if-env-changed=BINDGEN_EXTRA_CLANG_ARGS_riscv64gc-unknown-none-elf
+  cargo:rerun-if-env-changed=BINDGEN_EXTRA_CLANG_ARGS_riscv64gc_unknown_none_elf
+  cargo:rerun-if-env-changed=BINDGEN_EXTRA_CLANG_ARGS
+
+  --- stderr
+  CMake Warning (dev) at CMakeLists.txt:1 (project):
+    cmake_minimum_required() should be called prior to this top-level project()
+    call.  Please see the cmake-commands(7) manual for usage documentation of
+    both commands.
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+
+  CMake Deprecation Warning at CMakeLists.txt:2 (cmake_minimum_required):
+    Compatibility with CMake < 3.5 will be removed from a future version of
+    CMake.
+
+    Update the VERSION argument <min> value or use a ...<max> suffix to tell
+    CMake that the project does not need compatibility with older versions.
+
+
+  /usr/lib/llvm-14/lib/clang/14.0.0/include/inttypes.h:21:15: fatal error: 'inttypes.h' file not found
+  thread 'main' panicked at /root/.cargo/git/checkouts/lwext4_rust-4e222564268298f1/562fbfc/build.rs:88:10:
+  Unable to generate bindings: ClangDiagnostic("/usr/lib/llvm-14/lib/clang/14.0.0/include/inttypes.h:21:15: fatal error: 'inttypes.h' file not found\n")
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+make: *** [Makefile:191: clippy] Error 101
