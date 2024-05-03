@@ -1,0 +1,59 @@
+INFO     root:test_arceos.py:83 test_type=monokernel
+INFO     root:test_arceos.py:84 test_cmd=export PATH=$PATH:/home/xh/qemu-7.0.0/build:/home/runner/.cargo/bin:/home/runner/work/Starry/Starry/riscv64-linux-musl-cross/bin:/home/runner/work/Starry/Starry/aarch64-linux-musl-cross/bin:/home/runner/work/Starry/Starry/x86_64-linux-musl-cross/bin &&              cd /home/runner/work/Starry/Starry && ./build_img.sh x86_64 fat32 && sudo fuser -k 5555/tcp 5555/udp; make A=apps/monolithic_userboot ARCH=x86_64 TC=netperf APP_FEATURES=batch run
+INFO     root:test_arceos.py:86 res=true
+30+0 records in
+30+0 records out
+125829120 bytes (126 MB, 120 MiB) copied, 0.12235 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+Copying x86_64 fat32 testsuits-x86_64-linux-musl/* to disk
+    [92;1mBuilding[0m App: monolithic_userboot, Arch: x86_64, Platform: x86_64-qemu-q35, App type: rust
+[37mcargo build[0m [90m--target x86_64-unknown-none --target-dir /home/runner/work/Starry/Starry/target --release  --manifest-path apps/monolithic_userboot/Cargo.toml --features "syscall_entry/log-level-off syscall_entry/bus-pci syscall_entry/fp_simd syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net syscall_entry/schedule syscall_entry/fatfs batch"[0m
+   Compiling axdriver v0.1.0 (/home/runner/work/Starry/Starry/modules/axdriver)
+   Compiling axfs v0.1.0 (/home/runner/work/Starry/Starry/modules/axfs)
+   Compiling axnet v0.1.0 (/home/runner/work/Starry/Starry/modules/axnet)
+   Compiling axmem v0.1.0 (/home/runner/work/Starry/Starry/modules/axmem)
+   Compiling syscall_utils v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_utils)
+   Compiling axprocess v0.1.0 (/home/runner/work/Starry/Starry/modules/axprocess)
+   Compiling axruntime v0.1.0 (/home/runner/work/Starry/Starry/modules/axruntime)
+   Compiling syscall_fs v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_fs)
+   Compiling axfeat v0.1.0 (/home/runner/work/Starry/Starry/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/Starry/Starry/api/arceos_api)
+   Compiling syscall_task v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_task)
+   Compiling syscall_net v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_net)
+   Compiling syscall_mem v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_mem)
+   Compiling syscall_entry v0.1.0 (/home/runner/work/Starry/Starry/ulib/axstarry/syscall_entry)
+   Compiling monolithic_userboot v0.1.0 (/home/runner/work/Starry/Starry/apps/monolithic_userboot)
+    Finished release [optimized] target(s) in 9.76s
+[37mrust-objcopy --binary-architecture=x86_64[0m [90mapps/monolithic_userboot/monolithic_userboot_x86_64-qemu-q35.elf --strip-all -O binary apps/monolithic_userboot/monolithic_userboot_x86_64-qemu-q35.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-x86_64[0m [90m-m 2G -smp 1 -machine q35 -kernel apps/monolithic_userboot/monolithic_userboot_x86_64-qemu-q35.elf -device virtio-blk-pci,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+c[?7l[2J[0mSeaBIOS (version rel-1.16.0-0-gd239552ce722-prebuilt.qemu.org)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+7FF90E40+7FEF0E40 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from ROM..
+Initialize IDT & GDT...
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = x86_64
+platform = x86_64-qemu-q35
+target = x86_64-unknown-none
+smp = 1
+build_mode = release
+log_level = off
+
+====== netperf UDP_STREAM begin ======
+Starting netserver with host '127.0.0.1' port '12865' and family AF_UNSPEC
+MIGRATED UDP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 127.0.0.1 (127.0.0) port 0 AF_INET
+INFO     root:test_arceos.py:90 用例结果信息--->测试成功
