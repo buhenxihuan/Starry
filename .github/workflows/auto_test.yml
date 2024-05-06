@@ -1,5 +1,5 @@
 name: auto_test_ci
-
+#定义触发条件，在push，pr时会主动触发，同时每4个小时定时触发
 on: 
   push:
   pull_request:
@@ -7,7 +7,7 @@ on:
   schedule:
     - cron: "0 */4 * * *"
   
-
+# 定义全局环境变量
 env:
   qemu-version: 7.1.0
   rust-toolchain: nightly
@@ -16,26 +16,26 @@ env:
 jobs:
   ci_test:
     name: Linux Application Image Test
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-22.04 # 选定github aciton启动的os环境
     strategy:
       fail-fast: false
       matrix:
         # arch: [x86_64, riscv64, aarch64]
-        arch: [riscv64,x86_64]
+        arch: [riscv64,x86_64] # 使用matrix矩阵，同时执行两个不同的架构ci测试
     env:
         ARCH: ${{matrix.arch}}
         # or ext4
         FS: fat32
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 # 检出本地代码
 
 
-      - name: Add current date into a variable
+      - name: Add current date into a variable # 将时间传递给github action中的环境变量
         run: |
             COMMIT_TIME=$(date -d '+8 hour')
             echo "COMMIT_TIME=$COMMIT_TIME" >> $GITHUB_ENV
 
-      - name: config.py key_value set
+      - name: config.py key_value set # 使用github aciton中的环境变量对pytest下的config.py文件中的配置进行替换
         shell: sh
         run: |
               cd pytest
@@ -96,13 +96,13 @@ jobs:
           qemu-system-${{ matrix.arch }} --version
 
           
-      - if: matrix.arch == 'riscv64'
+      - if: matrix.arch == 'riscv64' # riscv64额外环境
         uses: actions-rs/install@v0.1
         with:
           crate: cargo-binutils
           version: latest
 
-      - name: Install dependence
+      - name: Install dependence   # 安装pytest所需的依赖库、allure以及交叉编译环境
         run: |
           sudo apt install openjdk-17-jdk
           sudo apt install nodejs
@@ -120,22 +120,22 @@ jobs:
 
 
       
-      - name: install pytest
+      - name: install pytest  # 根据requirements中的依赖安装pytest
         run: |
           chmod -R 777 pytest/
           cd pytest
           sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
-      - name: os_test
+      - name: os_test # 使用pytest框架进行测试
         run: |
           cd pytest
           sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
 
 
-      - name: deal parrale  
+      - name: deal parrale  # 两个架构的报告从同一个分支获得，避免同时pull后push的冲突
         if: always()
         run: if [ "${{matrix.arch}}" = "riscv64" ]; then sleep 240; fi     
         
-      - name: load allure history
+      - name: load allure history # pull报告所在分支的数据
         uses: actions/checkout@v3
         if: always()
         continue-on-error: true
@@ -143,7 +143,7 @@ jobs:
           ref: gh-pages_ci
           path: gh-pages_ci
       
-      - name: build report
+      - name: build report # 本地生成报告
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
@@ -155,7 +155,7 @@ jobs:
       
 
 
-      - name: Publish report
+      - name: Publish report # 发布报告
         uses: peaceiris/actions-gh-pages@v3
         if: always()
         with:
