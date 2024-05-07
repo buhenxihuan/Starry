@@ -79,6 +79,7 @@ jobs:
         with:
           path: qemu-${{ env.qemu-version }}
           key: qemu-${{ env.qemu-version }}
+          save-always: true
 
       - name: Install ninja-build
         run: sudo apt-get update && sudo apt-get install -y ninja-build
