@@ -32,7 +32,7 @@ pip3 install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trus
 
 ## 执行自动化测试示例
 ```
-pytest  -sv --alluredir report/result testcase/test_realtime.py --clean-alluredir
+pytest  -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
 ```
 
 ## 生成并打开测试报告
